@@ -16,7 +16,7 @@ Next.js 15.5 (December 2024) brings groundbreaking changes with **React 19 suppo
 
 Tailwind CSS v4.1.13 (September 5, 2025) represents a complete framework rewrite with its new **Oxide engine built in Rust**, delivering **3.78x faster full builds** (378ms → 100ms) and **8.8x to 182x faster incremental builds**. The latest version includes text shadow utilities, mask utilities, and enhanced container query support. The framework eliminates `tailwind.config.js` in favor of CSS-first configuration using `@theme` directives, supports native CSS features like cascade layers and `color-mix()`, and produces **sub-10kB CSS bundles** for most projects.
 
-**shadcn/ui** has emerged as the dominant React component library with **85.5k GitHub stars**, offering 65+ copy-paste components built on Radix UI primitives. The library's unique model provides full code ownership without runtime dependencies, making it the "default UI library of LLMs" with native support in AI tools like Bolt, v0, and Lovable. **Tailwind UI** complements this with 500+ premium components and the new Catalyst UI Kit for React applications.
+**shadcn/ui CLI 3.3.1** has emerged as the dominant React component platform with **95.1k GitHub stars**, offering a revolutionary code distribution system with namespaced registries and MCP server integration. The platform's unique model provides full code ownership without runtime dependencies, making it the "default UI library of LLMs" with native support in AI tools like Claude Code, Bolt, v0, and Lovable. **Tailwind UI** complements this with 500+ premium components and the new Catalyst UI Kit for React applications.
 
 ## Supabase platform features enable comprehensive backend capabilities
 
@@ -82,7 +82,7 @@ Additional services include **Vercel KV** (Redis-compatible key-value store), **
 
 **Vercel AI SDK 5** leads with **2 million weekly downloads**, offering redesigned chat systems with full-stack type safety, custom message types with TypeScript support, and tool invocations with automatic streaming. The SDK supports all major providers through unified interfaces with native MCP protocol integration.
 
-**v0.dev** generates production-ready React components from natural language, supporting iteration and refinement with image-to-code capabilities. Pricing ranges from free (200 credits) to Premium ($50/month for 10,000 credits), focusing on frontend UI generation with shadcn/ui and Tailwind CSS integration.
+**v0.dev** generates production-ready React components from natural language, supporting iteration and refinement with image-to-code capabilities. Pricing ranges from free (200 credits) to Premium ($50/month for 10,000 credits), focusing on frontend UI generation with shadcn/ui CLI 3.3.1 and Tailwind CSS v4.1.13 integration.
 
 ## Native stack automation replaces traditional workflow tools
 

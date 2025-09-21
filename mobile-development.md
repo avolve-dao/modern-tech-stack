@@ -30,7 +30,7 @@ State management benchmarks reveal Zustand 4.5.5 as the versatile winner with 46
 
 ## Component libraries mature with FlashList v2
 
-Shopify's FlashList v2 eliminates estimatedItemSize requirements while achieving 50% better scrolling performance with 2+ million monthly downloads, built specifically for React Native's New Architecture. shadcn/ui equivalents gain traction through react-native-reusables, nativecn-ui with CLI tooling, and Gluestack UI v2's copy-paste approach. React Native Skia introduces WebGPU support delivering 50% faster iOS and 200% faster Android performance with Three.js integration and TensorFlow.js compatibility. Production adoption shows React Native powering 26% of top 100 business apps with 75% of SDK 52+ projects using New Architecture.
+Shopify's FlashList v2 eliminates estimatedItemSize requirements while achieving 50% better scrolling performance with 2+ million monthly downloads, built specifically for React Native's New Architecture. shadcn/ui CLI 3.3.1 equivalents gain traction through react-native-reusables, nativecn-ui with CLI tooling, and Gluestack UI v2's copy-paste approach bringing the namespaced registry model to React Native. React Native Skia introduces WebGPU support delivering 50% faster iOS and 200% faster Android performance with Three.js integration and TensorFlow.js compatibility. Production adoption shows React Native powering 26% of top 100 business apps with 75% of SDK 52+ projects using New Architecture.
 
 ## Development tools transform with React Native DevTools
 

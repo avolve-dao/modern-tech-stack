@@ -47,6 +47,7 @@ This repository contains detailed analysis and implementation guides for the mod
 - [`react-19-complete-guide.md`](./react-19-complete-guide.md) - React 19.1 server-first revolution, React Compiler, and modern patterns
 - [`typescript-complete-guide.md`](./typescript-complete-guide.md) - **NEW** TypeScript 5.9.2 native performance revolution and mature ecosystem
 - [`tailwind-css-complete-guide.md`](./tailwind-css-complete-guide.md) - **NEW** Tailwind CSS v4.1.13 revolutionary architecture and CSS-first configuration
+- [`shadcn-ui-complete-guide.md`](./shadcn-ui-complete-guide.md) - **NEW** shadcn/ui CLI 3.3.1 code distribution platform and AI-native development
 - [`mobile-development.md`](./mobile-development.md) - React Native, Expo, and cross-platform development
 - [`full-stack-development.md`](./full-stack-development.md) - Next.js, React, and modern web patterns
 - [`web-capabilities.md`](./web-capabilities.md) - Infrastructure, AI tools, and platform services

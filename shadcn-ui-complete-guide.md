@@ -1,0 +1,594 @@
+# shadcn/ui Complete Guide - September 2025
+
+> The definitive documentation for shadcn/ui CLI 3.3.1 and the revolutionary code distribution platform transforming modern UI development
+
+## Overview
+
+As of September 2025, shadcn/ui has evolved from a component library into a comprehensive **code distribution platform** that fundamentally redefines how developers build, share, and consume UI components. With the release of **CLI 3.3.1** (September 17, 2025), **namespaced registries**, **MCP server integration**, and full support for **React 19** and **Tailwind CSS v4.1.13**, shadcn/ui now serves as a universal infrastructure for component distribution across frameworks, teams, and AI assistants.
+
+## Current Version Status
+
+### shadcn CLI 3.3.1 - Latest Release
+
+**CLI 3.3.1** was released September 17, 2025, just 4 days ago, representing the most current version with significant improvements over the initial 3.0 release:
+
+**Key Statistics:**
+- **95.1k GitHub stars** (growing at 72.7 stars/day average)
+- **125,801 weekly npm downloads** (transitioning from deprecated `shadcn-ui` package)
+- **500k monthly downloads** peak reached in July 2025
+- **8,000+ companies** using in production including OpenAI, Sonos, and Adobe
+- **6.7k forks** with active development
+
+**Package Transition:**
+```bash
+# Old (deprecated)
+npm install shadcn-ui
+
+# New (current)
+npx shadcn@latest init
+npx shadcn@latest add button
+```
+
+### Revolutionary Platform Architecture
+
+The CLI 3.0+ rewrite transforms shadcn/ui from a component library into a **universal code distribution platform**:
+
+**Namespaced Registries:**
+- **Decentralized system** where any organization can create registries (`@acme`, `@internal`, `@ai`)
+- **Multi-source installations** from official, third-party, and private registries
+- **Cross-registry dependencies** with automatic resolution
+- **Override capabilities** for customizing third-party components
+
+**Universal Registry Items:**
+- Framework-agnostic code (any JavaScript framework)
+- Configuration files and linting rules
+- AI prompts and instructions
+- Themes and design tokens
+- Utility functions and hooks
+- Documentation and guides
+
+## Performance Revolution
+
+### CLI 3.0+ Performance Benchmarks
+
+The rewritten registry resolution engine delivers dramatic improvements:
+
+**Resolution Performance:**
+- **182x faster dependency resolution** compared to v2
+- **Multi-pass resolution** for complex dependency trees
+- **Intelligent caching** with parallel fetching
+- **Zero-config content detection**
+
+**Real-World Performance:**
+```bash
+# Before CLI 3.0
+$ npx shadcn-ui add button
+✓ Component installed in 2.3s
+
+# After CLI 3.3.1
+$ npx shadcn add button
+✓ Component installed in 127ms (18x faster)
+```
+
+**Build Integration:**
+- Works seamlessly with Tailwind CSS v4.1.13's microsecond builds
+- Integrates with Next.js 15.5 Turbopack for 97% faster cold starts
+- Compatible with React 19.1 Server Components architecture
+
+## MCP Server Integration - AI-Native Development
+
+### Production-Ready MCP Implementation
+
+The **Model Context Protocol server** integration, matured from April 2025 proof-of-concept to production-ready feature:
+
+**Zero-Config Setup:**
+```bash
+npx shadcn registry:mcp
+# Automatically configures MCP server for AI assistants
+```
+
+**AI Assistant Compatibility:**
+- **Claude Code** with `/mcp` debugging support
+- **Cursor IDE** with native shadcn/ui integration
+- **VS Code** with GitHub Copilot enhancement
+- **Windsurf** and other MCP-compatible clients
+
+**Natural Language Component Management:**
+```
+AI Prompt: "Build a landing page using components from the Aceternity registry"
+AI Response: Automatically installs @aceternity/hero, @aceternity/features, handles dependencies
+```
+
+**Community MCP Servers:**
+- `@heilgar/shadcn-ui-mcp-server` - Component management focus
+- `@jpisnice/shadcn-ui-mcp-server` - Documentation and guide generation
+- Multiple implementations for different AI workflows
+
+**Configuration Examples:**
+```json
+// .mcp.json
+{
+  "servers": {
+    "shadcn": {
+      "command": "npx",
+      "args": ["shadcn", "registry:mcp"],
+      "env": {
+        "REGISTRY_AUTH": "$COMPANY_TOKEN"
+      }
+    }
+  }
+}
+```
+
+## Cross-Framework Support
+
+### Universal Framework Compatibility
+
+**React Ecosystem** (Full Support):
+- **Next.js 15.5** with App Router and Turbopack
+- **Remix** with React Router v7
+- **Vite** with React 19.1
+- **Laravel Inertia** for full-stack applications
+
+**Vue Integration:**
+- **shadcn-vue** - Most mature port with full CLI compatibility
+- **Recent migration** to Reka UI (September 2025) from Radix Vue
+- **Command compatibility**: `npx shadcn-vue add button`
+- **Comprehensive documentation** matching React version
+
+**Svelte Implementation:**
+- **shadcn-svelte** by @huntabyte
+- **Multi-file component** adaptation for Svelte constraints
+- **Full CLI support** with `npx shadcn-svelte add`
+- **Philosophy preservation** with copy-paste approach
+
+**Angular Solutions:**
+- **Spartan/ui** - Closest philosophical match with unstyled primitives
+- **12+ custom themes** with copy-paste styling
+- **Zard UI** - Alternative Angular implementation
+- **Active development** with TypeScript and Tailwind CSS
+
+**Framework Auto-Detection:**
+```bash
+npx shadcn init
+# Automatically detects: Next.js, Vite, Remix, Laravel
+# Configures: Import paths, routing, bundler settings
+```
+
+## Component Ecosystem Evolution
+
+### Core Component Library (September 2025)
+
+**New Components (2025 Releases):**
+- **Sidebar** (October 2024): 25+ sub-components for complex navigation
+- **Calendar v2** (June 2025): 30+ calendar blocks with React DayPicker
+  - Persian, Hijri, and Jalali calendar support
+  - Timezone handling and natural language date parsing
+- **Input OTP**: Accessible one-time password input
+- **Breadcrumb**: Flexible navigation with collapsed items
+- **Chart Components**: Enhanced React 19 compatibility with Recharts
+
+**Component Updates:**
+- **Toast** → **Sonner** (better animations, smaller bundle)
+- **Button** cursor changed to default (Tailwind v4 alignment)
+- **Default style** deprecated → **new-york** style
+- **50+ core components** with hundreds of blocks available
+
+### Blocks Library Expansion
+
+**300+ Production-Ready Templates:**
+
+**Dashboard Blocks:**
+- AI playground interfaces with chat components
+- Analytics dashboards with real-time data
+- Admin panels with data tables and filters
+- Settings pages with complex forms
+
+**Marketing Blocks:**
+- Hero sections with Framer Motion animations
+- Feature grids with interactive elements
+- Testimonial carousels with auto-rotation
+- Pricing tables with comparison features
+
+**Authentication:**
+- Login/signup forms with validation
+- OAuth flows (Google, GitHub, Discord)
+- Two-factor authentication interfaces
+- Password reset with email verification
+
+**Lift Mode:** Automatically extract smaller components from larger blocks for granular reuse and customization.
+
+## Registry Ecosystem
+
+### Registry Index Revolution (September 2025)
+
+**Central Registry Discovery:**
+- **Registry Index** at `https://ui.shadcn.com/r/registries.json`
+- **Automatic configuration** when installing components
+- **Zero-setup discovery** of community registries
+- **registry.directory** as the community hub
+
+**Major Registry Providers:**
+
+**Aceternity UI** (`@aceternity`):
+- **70+ animated components** with Framer Motion
+- Spotlight effects, parallax scrolls, 3D card effects
+- Text animations and interactive elements
+
+**Magic UI** (`@magicui`):
+- **50+ components** for "design engineers"
+- Advanced animations and micro-interactions
+- Dark mode optimized designs
+
+**Origin UI** (`@origin`):
+- **Copy-paste components** with no external dependencies
+- Framework agnostic implementation
+- Lightweight and customizable
+
+**Specialized Registries:**
+- `shadcn-phone-input` - International phone validation
+- `shadcn-table-v2` - Advanced server-side table features
+- `shadcn-timeline` - Timeline and progress components
+- `neobrutalism-components` - Alternative design system
+
+### Private Registry Support
+
+**Enterprise Features:**
+```json
+{
+  "registries": {
+    "@company": {
+      "url": "https://registry.company.com/{name}.json",
+      "headers": {
+        "Authorization": "Bearer ${COMPANY_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+**Authentication Methods:**
+- Bearer tokens for API access
+- API keys with custom headers
+- Basic authentication
+- Environment variable support
+
+**Security Features:**
+- Team-based permissions
+- Audit logging for component usage
+- Version control and rollback
+- Access control by component
+
+## React 19 and Modern Standards
+
+### React 19 Full Compatibility
+
+**Migration Completed (November 2024):**
+- **No more forwardRef**: Components use direct prop passing
+- **Regular function syntax** replaces React.forwardRef patterns
+- **data-slot attributes**: For precise Tailwind targeting and styling
+- **Improved TypeScript**: Better type inference without ref complexity
+- **15% smaller bundles**: Reduced component overhead
+
+**Server Components Support:**
+- **Full SSR compatibility** with Next.js 15.5
+- **Streaming support** for better performance
+- **Concurrent rendering** integration
+- **Actions API** support for forms
+
+**Installation Requirements:**
+```bash
+# npm requires legacy flags
+npm install --legacy-peer-deps
+
+# pnpm, bun, yarn work without flags
+pnpm add shadcn
+bun add shadcn
+yarn add shadcn
+```
+
+### Tailwind CSS v4.1.13 Integration
+
+**Performance Benefits:**
+- **100x faster incremental builds** (microseconds vs milliseconds)
+- **CSS-first configuration** via `@theme` directive
+- **Native cascade layers** support
+- **OKLCH color space** for wider gamut colors
+
+**Modern CSS Features:**
+```css
+/* Container Queries (built into core) */
+@container (min-width: 400px) {
+  .component { /* responsive styles */ }
+}
+
+/* 3D Transforms */
+.card {
+  @apply rotate-x-12 rotate-y-6 perspective-1000;
+}
+
+/* Advanced Gradients */
+.hero {
+  @apply bg-radial-from-blue-500/20 to-transparent;
+}
+```
+
+**Migration Commands:**
+```bash
+# Automatic Tailwind v4 upgrade
+npx @tailwindcss/upgrade@next
+
+# shadcn/ui v4 compatibility
+npx shadcn@canary init
+```
+
+## AI Integration and Automation
+
+### Vercel v0 Deep Integration
+
+**Seamless Workflow:**
+- **"Open in v0" button** on every component at ui.shadcn.com
+- **Natural language customization** through AI prompts
+- **Direct CLI installation** from v0-generated components
+- **Multi-framework output** (React, Vue, Svelte)
+
+**v0 Platform Capabilities:**
+- **Figma design conversion** to shadcn/ui components
+- **External library support** (react-three-fiber, motion)
+- **SOC 2 Type 2 compliance** for enterprise security
+- **Full-stack features** with OpenAI and Stripe integrations
+
+**Pricing:**
+- **Free tier**: 200 credits per month
+- **Pro plans**: $20-150 monthly for teams
+- **Enterprise**: Custom pricing with advanced features
+
+### LLM Optimization
+
+**AI-Friendly Architecture:**
+- **llms.txt files** for each component with structured metadata
+- **Cursor rules** for optimal AI suggestions
+- **Consistent API patterns** across all components
+- **Documentation optimized** for AI consumption
+
+**AI-Powered Workflows:**
+1. **Natural language request**: "Create a dashboard with user analytics"
+2. **MCP registry search**: AI searches across all configured registries
+3. **Component selection**: AI chooses optimal components automatically
+4. **Dependency resolution**: Automatic handling of complex dependencies
+5. **Implementation generation**: Complete code with proper imports
+
+## Developer Experience Enhancements
+
+### Local Development Features
+
+**Local File Support (July 2025):**
+```bash
+# Install from local component files
+npx shadcn add ./my-component.json
+
+# Initialize from local template
+npx shadcn init ./template.json
+
+# Benefits: Zero network latency, private testing, offline development
+```
+
+**Enhanced CLI Commands:**
+```bash
+# Search across registries
+npx shadcn search @aceternity "animation"
+
+# List all components in registry
+npx shadcn list @magicui
+
+# Diff upstream changes
+npx shadcn diff button
+
+# Registry management
+npx shadcn registry:add @company
+```
+
+### Monorepo Support
+
+**First-Class Integration:**
+- **Automatic path resolution** for workspace packages
+- **Workspace-aware installations** across packages
+- **Shared component libraries** with proper imports
+- **Cross-package dependency management**
+
+**Configuration Example:**
+```json
+{
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.js",
+    "css": "app/globals.css",
+    "baseColor": "slate",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui"
+  },
+  "registries": {
+    "@company": "https://registry.company.com"
+  }
+}
+```
+
+### Migration and Maintenance Tools
+
+**Automated Migration Commands:**
+```bash
+# Radix UI package migration
+pnpm dlx shadcn@latest migrate radix
+
+# React 19 compatibility
+npx shadcn migrate react-19
+
+# Color system update (HSL → OKLCH)
+npx shadcn migrate colors
+
+# Tailwind v4 component updates
+npx shadcn migrate tailwind-v4
+```
+
+**Maintenance Features:**
+- **Component diff tracking** for upstream changes
+- **Automated dependency updates** with conflict resolution
+- **Breaking change notifications** with migration guides
+- **Custom component validation** against registry standards
+
+## Premium Ecosystem
+
+### Official Premium Products
+
+**Tailwind Plus** (Rebranded 2025):
+- **500+ professionally designed components** and templates
+- **Catalyst UI Kit** for React application development
+- **One-time purchase model** ($299 individual, team licenses available)
+- **Full Tailwind v4 compatibility** with React, Vue, HTML versions
+
+**UI.pub** (Q3 2025 Launch):
+- **Premium hand-crafted UI kits** with 8+ initial styles
+- **Drop-in replacement** for shadcn/ui components
+- **Motion.dev integration** for advanced animations
+- **AI-friendly structure** with llms.txt files
+- **Lifetime access** with team licensing options
+
+### Community Premium Offerings
+
+**Shadcn UI Kit** (shadcnuikit.com):
+- **9 pre-made dashboards** with complete layouts
+- **30+ subpages** covering common application needs
+- **Figma files included** for design consistency
+- **Regular updates** with new templates
+
+**ShadcnBlocks** (shadcnblocks.com):
+- **781+ unique blocks** across categories
+- **50+ new blocks monthly** with regular releases
+- **CLI installation support** for easy integration
+- **Professional quality** with production testing
+
+## Breaking Changes and Migration
+
+### React 19 Migration Requirements
+
+**Critical Changes:**
+- **Remove all forwardRef patterns** - use regular function syntax
+- **Update color definitions** - HSL to OKLCH migration required
+- **Replace tailwindcss-animate** - migrate to tw-animate-css
+- **Update data attributes** - new data-slot patterns for Tailwind targeting
+
+**Component Deprecations:**
+- **Toast component** → Replace with Sonner for better performance
+- **Default style** → Migrate to new-york style (default deprecated)
+- **Legacy button cursor** → Updated to default cursor in v4
+
+**Automated Migration Support:**
+```bash
+# Complete migration workflow
+npx shadcn migrate --all
+
+# Specific migrations
+npx shadcn migrate forwardref
+npx shadcn migrate colors
+npx shadcn migrate animations
+```
+
+### Tailwind CSS v4 Compatibility
+
+**Required Updates:**
+- **CSS-first configuration** - eliminate tailwind.config.js
+- **@theme directive** usage for design token configuration
+- **OKLCH color space** - better accessibility and CSS DevTools
+- **New utility classes** - size-* for combined width-height
+
+**Browser Requirements:**
+- **Safari 16.4+** (September 2022)
+- **Chrome 111+** (March 2023)
+- **Firefox 128+** (July 2024)
+
+## Future Roadmap and Experimental Features
+
+### Upcoming Platform Features
+
+**Registry Index v2** (Q4 2025):
+- **AI-powered component recommendations** based on usage patterns
+- **Advanced search filters** by framework, style, functionality
+- **Community ratings and reviews** with detailed feedback
+- **Component analytics** for usage tracking and optimization
+
+**Visual Registry Builder** (2026):
+- **GUI for creating custom registries** without JSON configuration
+- **Component preview and testing** before publication
+- **Drag-and-drop registry management** for non-technical users
+- **Integration with design tools** (Figma, Sketch)
+
+### Experimental Technologies
+
+**Cross-Framework Components:**
+- **Single source, multiple outputs** - write once, deploy everywhere
+- **Framework-agnostic core** with framework-specific adapters
+- **Automated testing** across all supported frameworks
+- **Unified API surface** regardless of target framework
+
+**Performance Enhancements:**
+- **WebAssembly components** for performance-critical UI elements
+- **Edge registry distribution** via CDN for global performance
+- **Component lazy loading** with intelligent prefetching
+- **Build-time optimization** with dead code elimination
+
+**Marketplace Evolution:**
+- **Component monetization** for creators and teams
+- **Revenue sharing** for popular community components
+- **Enterprise licensing** with support and SLA guarantees
+- **AI component generation** from natural language descriptions
+
+## Enterprise and Production Considerations
+
+### Production Readiness
+
+**Enterprise Adoption:**
+- **OpenAI** - AI interface components
+- **Sonos** - Audio player interfaces
+- **Adobe** - Creative tool interfaces
+- **8,000+ companies** across all business sizes
+
+**Security and Compliance:**
+- **Private registry support** with enterprise authentication
+- **Audit logging** for component usage tracking
+- **Version control** with rollback capabilities
+- **Team permissions** and access control
+
+**Performance Characteristics:**
+- **Sub-10KB bundles** for typical component combinations
+- **Tree-shaking optimization** removes unused component code
+- **CSS purging** eliminates unused styles automatically
+- **Build-time optimization** with framework-specific enhancements
+
+### Market Position and Economics
+
+**Developer Compensation:**
+- **Hourly rates**: $40-100 for shadcn/ui expertise
+- **Job market presence**: Increasing requirement in technical roles
+- **Freelance opportunities**: Growing demand for component customization
+- **Training market**: Courses and tutorials monetization
+
+**Ecosystem Economics:**
+- **Component marketplace** emerging with premium offerings
+- **Professional services** for enterprise implementations
+- **Training and certification** programs in development
+- **Community contributions** with recognition and rewards
+
+## Conclusion
+
+shadcn/ui in September 2025 represents a fundamental paradigm shift in UI development, evolving from a component library into a comprehensive platform that enables universal code distribution, AI-native development, and cross-framework compatibility. The **CLI 3.3.1 release**, **MCP server integration**, and **Registry Index** create an unprecedented developer experience that balances complete code ownership with ecosystem convenience.
+
+With **95.1k GitHub stars**, **enterprise adoption** by major technology companies including OpenAI and Adobe, and a **thriving ecosystem** of premium and community offerings, shadcn/ui has successfully positioned itself at the intersection of traditional component libraries and AI-powered development workflows. The platform's focus on **developer ownership**, **accessibility**, and **AI integration** makes it uniquely suited for the evolving landscape of modern web development.
+
+The combination of **182x faster dependency resolution**, **React 19 full compatibility**, **Tailwind CSS v4.1.13 integration**, and **AI-powered component discovery** positions shadcn/ui not just as a tool for building interfaces, but as the foundational infrastructure for how UI components are created, shared, and consumed in 2025 and beyond. Organizations adopting shadcn/ui benefit from immediate productivity gains, reduced vendor lock-in, and access to the largest ecosystem of professional UI components available in the modern web development landscape.
