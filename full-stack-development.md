@@ -38,7 +38,7 @@ Testing strategies have evolved with **Litmus** remaining the industry leader fo
 
 ## Supabase mobile features achieve production readiness
 
-Supabase's 2025 enhancements deliver substantial mobile improvements, particularly **pgvector 0.7.0** achieving **150x speedup** in index build times with binary quantization and **sub-100ms query latencies** on mobile-scale datasets. The built-in AI inference API in Edge Functions eliminates external dependencies, with the **Supabase/gte-small** model supported natively in Edge Runtime.
+Supabase's 2025 enhancements deliver substantial mobile improvements, particularly **pgvector 0.8.0** achieving **1,185% better performance than Pinecone** while maintaining 98% accuracy and **sub-50ms query latencies** on million-scale datasets. The platform now serves **1.7 million developers** with **$5 billion valuation discussions** and built-in AI inference through Edge Functions.
 
 **WatermelonDB** and **PowerSync** provide production-tested offline-first solutions, with the former using SQLite-based local storage and Postgres RPC-based sync, while PowerSync offers enterprise-grade WAL-based replication. The latest **@supabase/supabase-js v2.57.4** includes React Native optimizations with the new `processLock` for enhanced session management.
 

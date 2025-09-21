@@ -32,7 +32,7 @@ Supabase's major releases brought transformative capabilities including **500GB 
 
 ### Storage and real-time capabilities scale to enterprise demands
 
-Storage improvements include **500GB file uploads** for all paid plans, with **cached egress pricing reduced to $0.03/GB** from $0.09/GB. Real-time subscriptions support **$10 per 1,000 peak connections** with globally distributed infrastructure. **Vector embeddings with pgvector** enable AI/ML workloads with HNSW and IVF indexing supporting up to **1.6 million embeddings** efficiently.
+Storage improvements include **500GB file uploads** for all paid plans, with **cached egress pricing reduced to $0.03/GB** from $0.09/GB. Real-time subscriptions support **250,000 concurrent connections** with globally distributed infrastructure. **Vector embeddings with pgvector 0.8.0** enable AI workloads that outperform Pinecone by 1,185% while supporting **50+ million embeddings** efficiently.
 
 Row Level Security patterns provide database-level enforcement with policy-based access control, supporting user-owned data, team-based access, role-based permissions, and time-based restrictions. Performance optimizations include security definer functions for complex joins and strategic indexing for RLS policy columns.
 
@@ -68,7 +68,7 @@ Additional services include **Vercel KV** (Redis-compatible key-value store), **
 
 ### AI/ML and geospatial processing achieve production scale
 
-**pgvector 0.8.1** supports vectors up to 2,000 dimensions (standard), 4,000 (half-precision), or 64,000 (binary), with HNSW indexes providing **30% query speed improvements** from PostgreSQL 16 to 17. The extension offers iterative index scans for improved filtered searches with multiple distance operators (Euclidean, cosine, inner product).
+**pgvector 0.8.0** supports vectors up to 2,000 dimensions (standard), 4,000 (half-precision), or 64,000 (binary), with HNSW indexes delivering **1,185% better performance than Pinecone** while maintaining 98% accuracy. The extension offers iterative index scans for improved filtered searches with multiple distance operators (Euclidean, cosine, inner product).
 
 **PostGIS 3.6.0** delivers comprehensive geospatial capabilities with **13x faster spatial operations** than MySQL. Features include 3D operations via SFCGAL, advanced topology support, raster processing for elevation data, and native GeoJSON/JSONB integration.
 
