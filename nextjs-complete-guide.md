@@ -31,6 +31,7 @@ Turbopack, the Rust-based bundler that has been years in development, reaches be
 - **96.3% faster code updates** with Fast Refresh
 - **2-5x faster production builds** depending on CPU cores
 - **25-35% reduction in memory usage** compared to Webpack
+- **Node.js 24.8.0 compatibility** with native TypeScript support
 
 **Important Trade-offs:**
 Independent testing reveals a **72% median increase in First-load JS bundle sizes** for some applications. Teams should carefully measure their specific applications before switching to production Turbopack builds, particularly for performance-sensitive mobile experiences.

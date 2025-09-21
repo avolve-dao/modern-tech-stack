@@ -20,6 +20,7 @@ This repository contains detailed analysis and implementation guides for the mod
 - **NativeWind v4** - Universal styling with 40% faster refresh times
 
 ### Backend & Infrastructure
+- **Node.js 24.8.0** - Native TypeScript support with 67-400% performance improvements
 - **Supabase** - Comprehensive backend with pgvector, queues, and edge functions
 - **Vercel** - AI Cloud with Active CPU pricing and 90% cost savings
 - **PostgreSQL 15+** - Advanced features with specialized extensions
@@ -48,6 +49,7 @@ This repository contains detailed analysis and implementation guides for the mod
 - [`typescript-complete-guide.md`](./typescript-complete-guide.md) - **NEW** TypeScript 5.9.2 native performance revolution and mature ecosystem
 - [`tailwind-css-complete-guide.md`](./tailwind-css-complete-guide.md) - **NEW** Tailwind CSS v4.1.13 revolutionary architecture and CSS-first configuration
 - [`shadcn-ui-complete-guide.md`](./shadcn-ui-complete-guide.md) - **NEW** shadcn/ui CLI 3.3.1 code distribution platform and AI-native development
+- [`nodejs-complete-guide.md`](./nodejs-complete-guide.md) - **NEW** Node.js 24.8.0 native TypeScript support and revolutionary performance
 - [`mobile-development.md`](./mobile-development.md) - React Native, Expo, and cross-platform development
 - [`full-stack-development.md`](./full-stack-development.md) - Next.js, React, and modern web patterns
 - [`web-capabilities.md`](./web-capabilities.md) - Infrastructure, AI tools, and platform services

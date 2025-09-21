@@ -35,6 +35,7 @@ Microsoft's revolutionary Go-based compiler rewrite delivers unprecedented perfo
 - Parallelized parsing and type checking (2-3x improvement)
 - Optimized memory layouts and data structures
 - Native execution without transpilation overhead
+- **Node.js 24.8.0 integration** with direct TypeScript execution
 
 ## Revolutionary Native Compiler Transformation
 
