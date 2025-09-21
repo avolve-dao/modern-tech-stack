@@ -12,7 +12,7 @@ This repository contains detailed analysis and implementation guides for the mod
 - **Next.js 15.5** - React framework with Turbopack and Server Components
 - **React 19.1** - Latest React with stable Server Components and Actions API
 - **TypeScript 5.9.2** - Native Go compiler with 10x performance improvements (85% enterprise adoption)
-- **Tailwind CSS v4** - Rust-powered Oxide engine with 100x faster builds
+- **Tailwind CSS v4.1.13** - Revolutionary CSS-first configuration with Oxide engine and 100x faster builds
 
 ### Mobile Development
 - **Expo SDK 54** - iOS 26 Liquid Glass support, 92% faster builds
@@ -46,6 +46,7 @@ This repository contains detailed analysis and implementation guides for the mod
 - [`nextjs-complete-guide.md`](./nextjs-complete-guide.md) - Complete Next.js 15.5 guide with AI integration, Turbopack, and TypeScript
 - [`react-19-complete-guide.md`](./react-19-complete-guide.md) - React 19.1 server-first revolution, React Compiler, and modern patterns
 - [`typescript-complete-guide.md`](./typescript-complete-guide.md) - **NEW** TypeScript 5.9.2 native performance revolution and mature ecosystem
+- [`tailwind-css-complete-guide.md`](./tailwind-css-complete-guide.md) - **NEW** Tailwind CSS v4.1.13 revolutionary architecture and CSS-first configuration
 - [`mobile-development.md`](./mobile-development.md) - React Native, Expo, and cross-platform development
 - [`full-stack-development.md`](./full-stack-development.md) - Next.js, React, and modern web patterns
 - [`web-capabilities.md`](./web-capabilities.md) - Infrastructure, AI tools, and platform services
@@ -100,6 +101,10 @@ npm install @vercel/analytics @vercel/speed-insights
 
 # Configure security and compliance
 npm install @supabase/ssr jose
+
+# Upgrade to Tailwind CSS v4 with Oxide engine (100x faster builds)
+npm install tailwindcss@next @tailwindcss/oxide
+npm install --save-dev @tailwindcss/cli
 ```
 
 ## Critical Updates for 2025
