@@ -10,7 +10,7 @@ React Native 0.81.0 marks a watershed moment with the New Architecture enabled b
 
 ## NativeWind v4 revolutionizes React Native styling
 
-NativeWind v4.1.23 achieves production readiness with full Tailwind CSS v3.2+ support, CSS variables, experimental animations via Reanimated, and container queries optimized for mobile. The jsxImportSource transform architecture provides 40% faster refresh times compared to v2's Babel plugin approach, while lightningcss compilation significantly reduces build times. Alternative solutions show varying performance: Tamagui achieves within 10% of vanilla React Native performance with its optimizing compiler, Gluestack UI v2 combines NativeWind v4 with copy-paste components achieving 99ms renders for 1000 components, while React Native UI Lib from Wix maintains 20,999 GitHub stars with enterprise-grade production testing.
+NativeWind v4.1.23 achieves production readiness with full Tailwind CSS v4.1.13 support, CSS variables, experimental animations via Reanimated, and container queries optimized for mobile. The jsxImportSource transform architecture provides 40% faster refresh times compared to v2's Babel plugin approach, while lightningcss compilation significantly reduces build times. Alternative solutions show varying performance: Tamagui achieves within 10% of vanilla React Native performance with its optimizing compiler, Gluestack UI v2 combines NativeWind v4 with copy-paste components achieving 99ms renders for 1000 components, while React Native UI Lib from Wix maintains 20,999 GitHub stars with enterprise-grade production testing.
 
 ## Supabase React Native SDK tackles offline challenges
 

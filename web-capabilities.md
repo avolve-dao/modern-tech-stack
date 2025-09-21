@@ -14,7 +14,7 @@ Next.js 15.5 (December 2024) brings groundbreaking changes with **React 19 suppo
 
 ### Tailwind CSS v4 and shadcn/ui dominate the UI landscape
 
-Tailwind CSS v4.0 (January 22, 2025) represents a complete framework rewrite with its new **Oxide engine built in Rust**, delivering **3.5-5x faster full builds** (378ms → 100ms) and **8-100x faster incremental builds**. The framework eliminates `tailwind.config.js` in favor of CSS-first configuration using `@theme` directives, supports native CSS features like cascade layers and `color-mix()`, and produces **sub-10kB CSS bundles** for most projects.
+Tailwind CSS v4.1.13 (September 5, 2025) represents a complete framework rewrite with its new **Oxide engine built in Rust**, delivering **3.78x faster full builds** (378ms → 100ms) and **8.8x to 182x faster incremental builds**. The latest version includes text shadow utilities, mask utilities, and enhanced container query support. The framework eliminates `tailwind.config.js` in favor of CSS-first configuration using `@theme` directives, supports native CSS features like cascade layers and `color-mix()`, and produces **sub-10kB CSS bundles** for most projects.
 
 **shadcn/ui** has emerged as the dominant React component library with **85.5k GitHub stars**, offering 65+ copy-paste components built on Radix UI primitives. The library's unique model provides full code ownership without runtime dependencies, making it the "default UI library of LLMs" with native support in AI tools like Bolt, v0, and Lovable. **Tailwind UI** complements this with 500+ premium components and the new Catalyst UI Kit for React applications.
 
@@ -100,7 +100,7 @@ Long-running workflows utilize step-function patterns with Inngest, fire-and-for
 
 ### Benchmark improvements demonstrate platform maturity
 
-Next.js 15 with Turbopack shows **76.7% faster local server startup**, **96.3% faster Fast Refresh**, and **45.8% faster initial compilation**. Tailwind CSS v4 achieves **3.78x faster full builds**, **8.8x faster incremental builds with new CSS**, and **182x faster incremental builds without new CSS**. Vercel's platform handles **45+ billion weekly requests** with **99.99% p99 response times** and **9x faster cold starts** than traditional serverless.
+Next.js 15 with Turbopack shows **76.7% faster local server startup**, **96.3% faster Fast Refresh**, and **45.8% faster initial compilation**. Tailwind CSS v4.1.13 achieves **3.78x faster full builds**, **8.8x faster incremental builds with new CSS**, and **182x faster incremental builds without new CSS**, with **22.47 million weekly npm downloads** demonstrating its **51% market share** dominance. Vercel's platform handles **45+ billion weekly requests** with **99.99% p99 response times** and **9x faster cold starts** than traditional serverless.
 
 ### Cost optimizations deliver significant savings
 
