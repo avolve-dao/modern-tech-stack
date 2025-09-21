@@ -33,6 +33,8 @@ This repository contains detailed analysis and implementation guides for the mod
 
 - **97% faster cold starts** with Next.js 15.5 and Turbopack
 - **96.3% faster Hot Module Replacement** for development
+- **50-75% reduction** in client-side JavaScript bundles with React 19.1 Server Components
+- **Automatic performance optimization** with React Compiler (eliminates manual memoization)
 - **iOS builds reduced from 120s to 10s** with precompiled React Native
 - **100x faster incremental builds** with Tailwind CSS v4 Oxide engine
 - **Sub-100ms query latencies** with Supabase pgvector optimization
@@ -40,7 +42,8 @@ This repository contains detailed analysis and implementation guides for the mod
 ## Documentation Structure
 
 ### Core Framework Guides
-- [`nextjs-complete-guide.md`](./nextjs-complete-guide.md) - **NEW** Complete Next.js 15.5 guide with AI integration, Turbopack, and TypeScript
+- [`nextjs-complete-guide.md`](./nextjs-complete-guide.md) - Complete Next.js 15.5 guide with AI integration, Turbopack, and TypeScript
+- [`react-19-complete-guide.md`](./react-19-complete-guide.md) - **NEW** React 19.1 server-first revolution, React Compiler, and modern patterns
 - [`mobile-development.md`](./mobile-development.md) - React Native, Expo, and cross-platform development
 - [`full-stack-development.md`](./full-stack-development.md) - Next.js, React, and modern web patterns
 - [`web-capabilities.md`](./web-capabilities.md) - Infrastructure, AI tools, and platform services
@@ -66,6 +69,10 @@ npx supabase init && supabase start
 npm install ai @ai-sdk/openai @ai-sdk/anthropic
 npm install @ai-sdk/google @ai-sdk/google-vertex
 
+# Add React 19.1 with Server Components and React Compiler
+npm install react@19.1.1 react-dom@19.1.1
+npm install babel-plugin-react-compiler
+
 # Optional: Add database integration
 npm install @supabase/supabase-js
 ```
@@ -73,9 +80,14 @@ npm install @supabase/supabase-js
 ### Enhanced Setup for Production
 
 ```bash
-# Enable TypeScript strict mode and route validation
+# Enable React 19 TypeScript migration and React Compiler
 npm install --save-dev @next/codemod
 npx @next/codemod@canary upgrade latest
+npx types-react-codemod@latest preset-19
+
+# Set up modern testing with Vitest (replaces Jest)
+npm install --save-dev vitest @testing-library/react@16.3.0
+npm install --save-dev @testing-library/jest-dom @testing-library/user-event
 
 # Set up monitoring and performance tracking
 npm install @vercel/analytics @vercel/speed-insights
