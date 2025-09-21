@@ -100,7 +100,7 @@ Long-running workflows utilize step-function patterns with Inngest, fire-and-for
 
 ### Benchmark improvements demonstrate platform maturity
 
-Next.js 15 with Turbopack shows **76.7% faster local server startup**, **96.3% faster Fast Refresh**, and **45.8% faster initial compilation**. Tailwind CSS v4.1.13 achieves **3.78x faster full builds**, **8.8x faster incremental builds with new CSS**, and **182x faster incremental builds without new CSS**, with **22.47 million weekly npm downloads** demonstrating its **51% market share** dominance. Vercel's platform handles **45+ billion weekly requests** with **99.99% p99 response times** and **9x faster cold starts** than traditional serverless.
+Next.js 15 with Turbopack shows **76.7% faster local server startup**, **96.3% faster Fast Refresh**, and **45.8% faster initial compilation**. Tailwind CSS v4.1.13 achieves **3.78x faster full builds**, **8.8x faster incremental builds with new CSS**, and **182x faster incremental builds without new CSS**, with **22.47 million weekly npm downloads** demonstrating its **51% market share** dominance. Vercel's AI Cloud platform handles **115 billion weekly requests** with **99.99% p99 response times** and **85% cost savings** through Fluid Compute architecture, while serving 4 million active domains with comprehensive AI model access.
 
 ### Cost optimizations deliver significant savings
 

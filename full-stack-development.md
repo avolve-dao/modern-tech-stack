@@ -54,7 +54,7 @@ Realtime improvements support **500 concurrent connections** on free tier with a
 
 ## Deployment and CI/CD achieve new efficiency levels
 
-**Vercel Ship 2025** introduced Active CPU Pricing charging only for actual execution time, reducing costs up to 85% for AI/async workloads. The platform's transition from Frontend Cloud to AI Cloud includes built-in model gateway capabilities. **EAS integration** patterns now include dedicated web hosting with custom domain support, while Fernando Rojo's leadership signals stronger React Native focus.
+**Vercel AI Cloud** features Fluid Compute architecture with Active CPU Pricing charging only for actual execution time, reducing costs up to 85% for AI/async workloads. The platform transformation includes AI Gateway with hundreds of models, v0 platform integration, and comprehensive enterprise security features. **EAS integration** patterns now include dedicated web hosting with custom domain support, while Fernando Rojo's leadership signals stronger React Native focus.
 
 GitHub Actions for monorepos benefit from **Turborepo remote caching** achieving 40-70% build time reduction with proper configuration. **Preview deployments** for mobile apps use QR code distribution with instant Expo Go access, while **EAS Updates** at $29/month provides unlimited OTA updates following CodePush's March 2025 retirement.
 

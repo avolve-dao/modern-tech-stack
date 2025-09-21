@@ -22,7 +22,7 @@ This repository contains detailed analysis and implementation guides for the mod
 ### Backend & Infrastructure
 - **Node.js 24.8.0** - Native TypeScript support with 67-400% performance improvements
 - **Supabase** - Comprehensive backend with pgvector, queues, and edge functions
-- **Vercel** - AI Cloud with Active CPU pricing and 90% cost savings
+- **Vercel AI Cloud** - Fluid Compute architecture with 85% cost savings and hundreds of AI models
 - **PostgreSQL 15+** - Advanced features with specialized extensions
 
 ### AI & Development Tools
@@ -50,6 +50,7 @@ This repository contains detailed analysis and implementation guides for the mod
 - [`tailwind-css-complete-guide.md`](./tailwind-css-complete-guide.md) - **NEW** Tailwind CSS v4.1.13 revolutionary architecture and CSS-first configuration
 - [`shadcn-ui-complete-guide.md`](./shadcn-ui-complete-guide.md) - **NEW** shadcn/ui CLI 3.3.1 code distribution platform and AI-native development
 - [`nodejs-complete-guide.md`](./nodejs-complete-guide.md) - **NEW** Node.js 24.8.0 native TypeScript support and revolutionary performance
+- [`vercel-complete-guide.md`](./vercel-complete-guide.md) - **NEW** Vercel AI Cloud platform with Fluid Compute and enterprise features
 - [`mobile-development.md`](./mobile-development.md) - React Native, Expo, and cross-platform development
 - [`full-stack-development.md`](./full-stack-development.md) - Next.js, React, and modern web patterns
 - [`web-capabilities.md`](./web-capabilities.md) - Infrastructure, AI tools, and platform services
