@@ -39,31 +39,55 @@ This repository contains detailed analysis and implementation guides for the mod
 
 ## Documentation Structure
 
+### Core Framework Guides
+- [`nextjs-complete-guide.md`](./nextjs-complete-guide.md) - **NEW** Complete Next.js 15.5 guide with AI integration, Turbopack, and TypeScript
 - [`mobile-development.md`](./mobile-development.md) - React Native, Expo, and cross-platform development
 - [`full-stack-development.md`](./full-stack-development.md) - Next.js, React, and modern web patterns
 - [`web-capabilities.md`](./web-capabilities.md) - Infrastructure, AI tools, and platform services
+
+### Implementation Resources
 - [`deployment/`](./deployment/) - Production deployment strategies and best practices
 - [`examples/`](./examples/) - Code examples and implementation patterns
+- [`security/`](./security/) - Security best practices and compliance guides
 
 ## Quick Start
 
 ```bash
-# Create new AI-native Next.js project
-npx create-next-app@latest --typescript --tailwind --app --src-dir
+# Create new AI-native Next.js project with Turbopack
+npx create-next-app@latest --typescript --tailwind --app --src-dir --turbo
 
-# Initialize Expo project with SDK 54
+# Initialize Expo project with SDK 54 (New Architecture)
 npx create-expo-app@latest --template blank-typescript
 
-# Set up Supabase backend
+# Set up Supabase backend with AI capabilities
 npx supabase init && supabase start
 
-# Configure AI development tools
+# Configure comprehensive AI development tools
 npm install ai @ai-sdk/openai @ai-sdk/anthropic
+npm install @ai-sdk/google @ai-sdk/google-vertex
+
+# Optional: Add database integration
+npm install @supabase/supabase-js
+```
+
+### Enhanced Setup for Production
+
+```bash
+# Enable TypeScript strict mode and route validation
+npm install --save-dev @next/codemod
+npx @next/codemod@canary upgrade latest
+
+# Set up monitoring and performance tracking
+npm install @vercel/analytics @vercel/speed-insights
+
+# Configure security and compliance
+npm install @supabase/ssr jose
 ```
 
 ## Critical Updates for 2025
 
 ### Urgent Migrations Required
+- **Next.js Security Patches (Aug 29, 2025)** - Apply GHSA-4342-x723-ch2f, GHSA-xv57-4mr9-wg8v, GHSA-g5qg-72w-gw5v
 - **Legacy Architecture removal in SDK 55** - Migrate to New Architecture immediately
 - **Android edge-to-edge mandatory** - Update UI layouts for SDK 54
 - **CodePush discontinued March 31, 2025** - Migrate to EAS Updates
