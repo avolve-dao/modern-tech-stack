@@ -80,7 +80,7 @@ Additional services include **Vercel KV** (Redis-compatible key-value store), **
 
 ### Vercel AI SDK and v0 streamline AI application development
 
-**Vercel AI SDK 5** leads with **2 million weekly downloads**, offering redesigned chat systems with full-stack type safety, custom message types with TypeScript support, and tool invocations with automatic streaming. The SDK supports all major providers through unified interfaces with native MCP protocol integration.
+**Vercel AI SDK 5.0.48** leads with **2 million weekly downloads**, offering redesigned chat systems with full-stack type safety, agentic loop control, and revolutionary multimodal capabilities. The SDK supports hundreds of AI models through unified interfaces with native Model Context Protocol integration and sophisticated tool calling systems.
 
 **v0.dev** generates production-ready React components from natural language, supporting iteration and refinement with image-to-code capabilities. Pricing ranges from free (200 credits) to Premium ($50/month for 10,000 credits), focusing on frontend UI generation with shadcn/ui CLI 3.3.1 and Tailwind CSS v4.1.13 integration.
 

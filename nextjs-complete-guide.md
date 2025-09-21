@@ -62,9 +62,9 @@ The framework now includes **React 19 support** with full backward compatibility
 
 ## AI-Native Framework Transformation
 
-### Vercel AI SDK 5.0 Integration
+### Vercel AI SDK 5.0.48 Integration
 
-The **Vercel AI SDK 5.0** integration transforms Next.js into an AI-native framework. The SDK provides type-safe access to over 100 AI models through a unified interface, eliminating the complexity of managing multiple API keys and provider-specific implementations.
+The **Vercel AI SDK 5.0.48** integration transforms Next.js into an AI-native framework. The SDK provides type-safe access to hundreds of AI models through a unified interface, including revolutionary agentic capabilities, multimodal support, and Model Context Protocol integration.
 
 **Revolutionary AI Features:**
 - **Custom message types** with complete TypeScript support
@@ -308,7 +308,7 @@ npx @next/codemod@canary upgrade latest
 
 ### AI Integration
 
-1. **Start with AI SDK 5.0** for type-safe AI development
+1. **Start with AI SDK 5.0.48** for type-safe AI development with agentic capabilities
 2. **Use AI Gateway** for multi-model applications
 3. **Implement proper error handling** for AI operations
 4. **Design for streaming** to improve user experience
