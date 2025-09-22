@@ -1,6 +1,33 @@
+---
+title: "Next.js Complete Guide - September 2025"
+technology: "nextjs"
+version: "15.5"
+status: "current"
+confidence: "high"
+last_updated: "2025-09-21"
+next_review: "2025-12-21"
+document_type: "comprehensive_guide"
+purpose: "Definitive documentation for Next.js 15.5 capabilities, AI integration, and production deployment"
+dependencies: ["react", "typescript", "nodejs"]
+integrations: ["vercel", "supabase", "tailwind", "ai-sdk"]
+breaking_changes: ["async-request-apis", "fetch-caching-changes", "turbopack-production"]
+performance_gains: ["2x-builds", "96%-hmr", "76%-startup"]
+audience:
+  beginners: "sections: [overview, quick-start, basic-features]"
+  intermediate: "sections: [app-router, performance, deployment]"
+  advanced: "sections: [architecture, optimization, enterprise]"
+ai_optimized: true
+reading_time:
+  overview: "10 minutes"
+  quick_start: "30 minutes"
+  comprehensive: "90 minutes"
+migration_effort: "low"
+learning_curve: "medium"
+---
+
 # Next.js Complete Guide - September 2025
 
-> The definitive documentation for Next.js 15.5 capabilities, AI integration, and production deployment strategies
+> 🚀 The definitive documentation for Next.js 15.5 capabilities, AI integration, and production deployment strategies
 
 ## Overview
 
