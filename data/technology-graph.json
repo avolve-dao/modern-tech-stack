@@ -1,0 +1,286 @@
+{
+  "meta": {
+    "version": "2025.1",
+    "last_updated": "2025-09-21",
+    "validation_status": "verified",
+    "ai_optimized": true
+  },
+  "technologies": {
+    "nextjs": {
+      "id": "nextjs",
+      "name": "Next.js",
+      "version": "15.5",
+      "status": "stable",
+      "category": "framework",
+      "confidence": "high",
+      "dependencies": ["react", "typescript", "nodejs"],
+      "integrations": ["vercel", "supabase", "tailwind", "ai-sdk"],
+      "alternatives": ["remix", "nuxt", "sveltekit"],
+      "migration_paths": {
+        "from": ["create-react-app", "gatsby", "vite-react"],
+        "effort": "medium",
+        "time": "1-2 weeks",
+        "breaking_changes": ["routing", "data-fetching"]
+      },
+      "performance_profile": {
+        "build_time": "2-5x faster",
+        "bundle_size": "50% reduction",
+        "cold_start": "<300ms",
+        "hmr": "96% faster"
+      },
+      "cost_impact": "medium",
+      "learning_curve": "medium",
+      "enterprise_ready": true
+    },
+    "react": {
+      "id": "react",
+      "name": "React",
+      "version": "19.1",
+      "status": "stable",
+      "category": "library",
+      "confidence": "high",
+      "dependencies": ["javascript"],
+      "integrations": ["nextjs", "vite", "typescript", "tailwind"],
+      "alternatives": ["vue", "svelte", "angular"],
+      "migration_paths": {
+        "from": ["react-18", "angular", "vue"],
+        "effort": "low",
+        "time": "3-5 days",
+        "breaking_changes": ["concurrent-features", "server-components"]
+      },
+      "performance_profile": {
+        "render_speed": "automatic optimization",
+        "bundle_size": "50-75% reduction with SSR",
+        "memory_usage": "improved"
+      },
+      "cost_impact": "none",
+      "learning_curve": "medium",
+      "enterprise_ready": true
+    },
+    "typescript": {
+      "id": "typescript",
+      "name": "TypeScript",
+      "version": "5.9.2",
+      "status": "stable",
+      "category": "language",
+      "confidence": "high",
+      "dependencies": ["nodejs"],
+      "integrations": ["nextjs", "react", "vercel", "supabase"],
+      "alternatives": ["javascript", "flow"],
+      "migration_paths": {
+        "from": ["javascript"],
+        "effort": "high",
+        "time": "2-4 weeks",
+        "breaking_changes": ["type-definitions", "strict-mode"]
+      },
+      "performance_profile": {
+        "compilation": "10x faster (native)",
+        "ide_support": "excellent",
+        "error_detection": "compile-time"
+      },
+      "cost_impact": "none",
+      "learning_curve": "high",
+      "enterprise_ready": true
+    },
+    "supabase": {
+      "id": "supabase",
+      "name": "Supabase",
+      "version": "latest",
+      "status": "stable",
+      "category": "backend",
+      "confidence": "high",
+      "dependencies": ["postgresql"],
+      "integrations": ["nextjs", "react", "typescript", "ai-sdk"],
+      "alternatives": ["firebase", "planetscale", "neon"],
+      "migration_paths": {
+        "from": ["firebase", "mongodb", "mysql"],
+        "effort": "medium",
+        "time": "1-3 weeks",
+        "breaking_changes": ["data-structure", "auth-patterns"]
+      },
+      "performance_profile": {
+        "query_speed": "sub-50ms vector search",
+        "realtime": "250k concurrent connections",
+        "vector_search": "1,185% faster than Pinecone"
+      },
+      "cost_impact": "medium",
+      "learning_curve": "medium",
+      "enterprise_ready": true
+    },
+    "vercel": {
+      "id": "vercel",
+      "name": "Vercel Platform",
+      "version": "latest",
+      "status": "stable",
+      "category": "platform",
+      "confidence": "high",
+      "dependencies": ["git"],
+      "integrations": ["nextjs", "react", "typescript", "ai-sdk"],
+      "alternatives": ["netlify", "cloudflare", "aws"],
+      "migration_paths": {
+        "from": ["netlify", "heroku", "aws"],
+        "effort": "low",
+        "time": "1-2 days",
+        "breaking_changes": ["environment-variables", "build-config"]
+      },
+      "performance_profile": {
+        "cold_starts": "42ms average",
+        "edge_network": "119 locations",
+        "build_time": "2-5x faster"
+      },
+      "cost_impact": "medium",
+      "learning_curve": "low",
+      "enterprise_ready": true
+    },
+    "ai-sdk": {
+      "id": "ai-sdk",
+      "name": "Vercel AI SDK",
+      "version": "5.0.48",
+      "status": "stable",
+      "category": "ai-toolkit",
+      "confidence": "high",
+      "dependencies": ["typescript", "react"],
+      "integrations": ["nextjs", "vercel", "openai", "anthropic"],
+      "alternatives": ["langchain", "llamaindex"],
+      "migration_paths": {
+        "from": ["langchain", "openai-direct"],
+        "effort": "medium",
+        "time": "1-2 weeks",
+        "breaking_changes": ["api-patterns", "streaming"]
+      },
+      "performance_profile": {
+        "streaming": "native SSE support",
+        "model_access": "100+ providers",
+        "latency": "sub-20ms routing"
+      },
+      "cost_impact": "variable",
+      "learning_curve": "medium",
+      "enterprise_ready": true
+    }
+  },
+  "relationships": {
+    "optimal_combinations": [
+      {
+        "stack": ["nextjs", "vercel", "typescript", "tailwind"],
+        "use_case": "modern web applications",
+        "performance_score": 10,
+        "developer_experience": 10,
+        "cost_efficiency": 8
+      },
+      {
+        "stack": ["react", "supabase", "typescript", "shadcn"],
+        "use_case": "full-stack applications",
+        "performance_score": 9,
+        "developer_experience": 9,
+        "cost_efficiency": 9
+      },
+      {
+        "stack": ["nextjs", "ai-sdk", "supabase", "vercel"],
+        "use_case": "AI-powered applications",
+        "performance_score": 10,
+        "developer_experience": 9,
+        "cost_efficiency": 7
+      }
+    ],
+    "conflict_warnings": [
+      {
+        "combination": ["nextjs_pages", "app_router"],
+        "issue": "Cannot mix routing approaches in same project",
+        "solution": "Choose one routing method consistently",
+        "severity": "high"
+      },
+      {
+        "combination": ["react_18", "server_components"],
+        "issue": "Server Components require React 19+",
+        "solution": "Upgrade to React 19.1",
+        "severity": "medium"
+      }
+    ],
+    "migration_complexity": {
+      "low": [
+        ["javascript", "typescript"],
+        ["netlify", "vercel"],
+        ["react_18", "react_19"]
+      ],
+      "medium": [
+        ["cra", "nextjs"],
+        ["firebase", "supabase"],
+        ["express", "vercel_functions"]
+      ],
+      "high": [
+        ["angular", "react"],
+        ["mongodb", "postgresql"],
+        ["custom_backend", "supabase"]
+      ]
+    }
+  },
+  "decision_trees": {
+    "backend_selection": {
+      "root": "need_backend",
+      "branches": {
+        "postgresql_required": "supabase",
+        "realtime_features": "supabase",
+        "simple_api": "vercel_functions",
+        "ai_workloads": "supabase_vector",
+        "serverless_only": "vercel_functions"
+      }
+    },
+    "frontend_framework": {
+      "root": "building_web_app",
+      "branches": {
+        "full_stack": "nextjs",
+        "spa_only": "react_vite",
+        "static_site": "nextjs_static",
+        "performance_critical": "nextjs_turbopack"
+      }
+    }
+  },
+  "performance_benchmarks": {
+    "verified_claims": {
+      "supabase_vector_vs_pinecone": {
+        "metric": "queries_per_second",
+        "supabase": 4720,
+        "pinecone": 375,
+        "improvement": "1185%",
+        "source": "supabase_benchmarks_sept_2025",
+        "verified": true
+      },
+      "nextjs_turbopack": {
+        "metric": "build_time_improvement",
+        "value": "2-5x faster",
+        "source": "nextjs_15_5_release",
+        "verified": true
+      },
+      "vercel_edge_functions": {
+        "metric": "cold_start_improvement",
+        "before": "870ms",
+        "after": "42ms",
+        "improvement": "95%",
+        "source": "vercel_performance_2025",
+        "verified": true
+      }
+    }
+  },
+  "cost_analysis": {
+    "typical_monthly_costs": {
+      "small_app_1k_users": {
+        "frontend": 20,
+        "backend": 25,
+        "database": 0,
+        "total": 45
+      },
+      "medium_app_10k_users": {
+        "frontend": 50,
+        "backend": 75,
+        "database": 50,
+        "total": 175
+      },
+      "enterprise_100k_users": {
+        "frontend": 599,
+        "backend": 599,
+        "database": 200,
+        "total": 1398
+      }
+    }
+  }
+}
