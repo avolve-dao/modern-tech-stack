@@ -229,36 +229,36 @@ graph LR
 
 ---
 
-### By Current Tech Stack
+### Keeping Your Projects Current
 
-#### "Using Firebase" → **Migration to Supabase**
-**Effort**: Medium (1-2 weeks)
-**Benefits**: PostgreSQL power, better pricing, no vendor lock-in
+#### Upgrading Next.js Versions
+**Current**: Next.js 15.5 (Latest)
+**Benefits**: 2-5x faster builds, improved performance, new features
 ```
-Migration Path:
-1. Assessment → [Firebase vs Supabase](../supabase-complete-guide.md#vs-firebase)
-2. Planning → [Migration Strategy](TBD: migration-paths/firebase-to-supabase.md)
-3. Implementation → [Step-by-step Migration](TBD)
-```
-
-#### "Using Create React App" → **Upgrade to Next.js**
-**Effort**: Low (3-5 days)
-**Benefits**: SSR, performance, better DX
-```
-Upgrade Path:
-1. Preparation → [CRA vs Next.js](../nextjs-complete-guide.md#migration-from-create-react-app)
-2. Migration → [Automated Tools](TBD: migration-paths/cra-to-nextjs.md)
-3. Optimization → [Next.js Features](../nextjs-complete-guide.md#app-router-and-react-server-components)
+Upgrade Process:
+1. Version Check → [Next.js Releases](../nextjs-complete-guide.md#version-history)
+2. Upgrade → [Automated Codemods](../nextjs-complete-guide.md#upgrade-guidance)
+3. Testing → [Breaking Changes Guide](../nextjs-complete-guide.md#breaking-changes)
 ```
 
-#### "Using Express API" → **Serverless Functions**
-**Effort**: Medium (1 week)
-**Benefits**: Auto-scaling, reduced ops, better performance
+#### Adopting Latest React Features
+**Current**: React 19.1 with Server Components
+**Benefits**: Automatic optimization, better performance, modern patterns
 ```
-Migration Path:
-1. Analysis → [Express vs Serverless](../vercel-complete-guide.md#migration-and-best-practices)
-2. Conversion → [API Route Migration](TBD: migration-paths/express-to-serverless.md)
-3. Deployment → [Vercel Functions](../vercel-complete-guide.md#edge-functions-advanced-features)
+Adoption Path:
+1. Assessment → [React 19 New Features](../react-19-complete-guide.md#whats-new)
+2. Implementation → [Server Components Migration](../react-19-complete-guide.md#server-components)
+3. Optimization → [React Compiler Setup](../react-19-complete-guide.md#react-compiler)
+```
+
+#### Staying Current with AI Capabilities
+**Current**: Vercel AI SDK 5.0.48, Latest AI models
+**Benefits**: New model access, improved performance, enhanced features
+```
+Update Strategy:
+1. Monitor → [AI SDK Releases](../vercel-ai-sdk-complete-guide.md#monitoring-updates)
+2. Evaluate → [New Model Capabilities](../vercel-ai-sdk-complete-guide.md#model-support)
+3. Integrate → [Feature Adoption Guide](../vercel-ai-sdk-complete-guide.md#upgrade-path)
 ```
 
 ---

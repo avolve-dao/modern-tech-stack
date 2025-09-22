@@ -50,7 +50,7 @@ This repository contains detailed analysis and implementation guides for the mod
 | **AI Web App** | 30 min | [AI Quick Track](./quick-start/LEARNING_PATHS.md#track-1-ai-first-web-app-) | 🟢 Ready |
 | **Full-Stack SaaS** | 2 hours | [Production Track](./quick-start/LEARNING_PATHS.md#track-2-full-stack-production-app-) | 🟢 Ready |
 | **Technology Decision** | 5 min | [Decision Matrix](./quick-reference/TECH_MATRIX.md) | 🟢 Ready |
-| **Migration Planning** | 15 min | [Migration Paths](./quick-start/LEARNING_PATHS.md#by-current-tech-stack) | 🟡 In Progress |
+| **Keep Projects Current** | 15 min | [Upgrade Paths](./upgrade-paths/README.md) | 🟢 Ready |
 
 ### 📚 **Documentation Hub**
 - **[🏠 Master Index](./master-index-ai-native-tech-stack.md)** - **ESSENTIAL STARTING POINT**

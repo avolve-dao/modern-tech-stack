@@ -252,38 +252,37 @@ enterprise_features:
 - **Vendor Coupling**: Optimized for Vercel (though portable)
 - **Bundle Size**: Larger than minimal frameworks
 
-#### When to Choose Alternatives:
-```typescript
-interface FrameworkSelection {
-  choose_remix: "When you prioritize web standards and form handling";
-  choose_vue_nuxt: "When team prefers Vue ecosystem";
-  choose_svelte: "When bundle size is critical constraint";
-  choose_vanilla_react: "When you need maximum flexibility";
-}
-```
+#### This Stack Is Optimal When:
+- Building modern web applications with AI features
+- Team has or can develop React/TypeScript skills
+- Performance and developer experience are priorities
+- Need to ship quickly with production-ready infrastructure
 
-### Supabase vs Alternatives
+#### Consider Adjustments If:
+- Team strongly prefers other frameworks (Vue, Angular, etc.)
+- Specific constraints require different solutions
+- Legacy system integration is critical
+- Specialized performance requirements exist
 
-#### Supabase Advantages:
-- **PostgreSQL Power**: Full SQL capabilities with ACID compliance
-- **Real-time**: Best-in-class WebSocket performance
-- **Vector Search**: 1,185% better performance than Pinecone
-- **Transparent Pricing**: Predictable costs without surprises
+### Why This AI-Native Stack
 
-#### Supabase Considerations:
-- **PostgreSQL Dependency**: Requires SQL knowledge
-- **Newer Platform**: Less enterprise track record than AWS
-- **Geographic Limitations**: Fewer regions than major cloud providers
+#### Proven Performance:
+- **Next.js**: 2-5x faster builds, 96% faster HMR
+- **Supabase**: 1,185% better vector performance than alternatives
+- **Vercel**: 42ms cold starts (95% improvement)
+- **TypeScript**: 10x faster compilation with native compiler
 
-#### When to Choose Alternatives:
-```typescript
-interface BackendSelection {
-  choose_firebase: "When you prefer NoSQL and Google ecosystem";
-  choose_planetscale: "When you need MySQL with better scaling";
-  choose_aws_rds: "When you need ultimate control and compliance";
-  choose_custom: "When you have specific performance requirements";
-}
-```
+#### Developer Experience:
+- **Integrated ecosystem** with minimal configuration
+- **Type safety** across frontend, backend, and database
+- **Real-time capabilities** built-in
+- **AI features** with simple API integration
+
+#### Business Benefits:
+- **Faster time to market** with proven patterns
+- **Predictable scaling** from prototype to enterprise
+- **Strong hiring pipeline** for React/TypeScript developers
+- **Vendor diversification** across multiple reliable providers
 
 ---
 
