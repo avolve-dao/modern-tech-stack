@@ -26,7 +26,7 @@ This repository contains detailed analysis and implementation guides for the mod
 - **PostgreSQL 15+** - Advanced features with specialized extensions
 
 ### AI & Development Tools
-- **Claude Code CLI** - Agentic coding with Model Context Protocol (MCP)
+- **Claude Code CLI** - Terminal-first AI coding assistant with 92.5% context understanding
 - **Vercel AI SDK 5.0.48** - Leading TypeScript AI toolkit with hundreds of models and agentic capabilities
 - **GitHub Copilot** - Enhanced React Native component generation
 
@@ -34,7 +34,7 @@ This repository contains detailed analysis and implementation guides for the mod
 
 - **97% faster cold starts** with Next.js 15.5 and Turbopack
 - **96.3% faster Hot Module Replacement** for development
-- **10x faster TypeScript compilation** with native Go-based compiler (TypeScript 7.0)
+- **10x faster TypeScript compilation** with native Go-based compiler (TypeScript 5.9.2)
 - **50-75% reduction** in client-side JavaScript bundles with React 19.1 Server Components
 - **Automatic performance optimization** with React Compiler (eliminates manual memoization)
 - **iOS builds reduced from 120s to 10s** with precompiled React Native
@@ -61,6 +61,7 @@ This repository contains detailed analysis and implementation guides for the mod
 ### ⚡ **Quick Reference**
 - **[🔍 Technology Matrix](./quick-reference/TECH_MATRIX.md)** - Instant decision tables and performance comparisons
 - **[🛤️ Learning Paths](./quick-start/LEARNING_PATHS.md)** - Optimized journeys for different goals and skill levels
+- **[📚 API Cheatsheets](./quick-reference/api-cheatsheets/README.md)** - Complete API references for Next.js, AI SDK, Supabase, TypeScript
 - **[📊 Performance Benchmarks](./quick-reference/TECH_MATRIX.md#performance-benchmarks-verified-september-2025)** - Verified metrics and comparisons
 
 ## 📖 Documentation Structure
@@ -76,8 +77,6 @@ This repository contains detailed analysis and implementation guides for the mod
 
 ### 🎯 **Strategic Analysis**
 - **[Tech Stack Evolution Synthesis](./tech-stack-evolution-synthesis-2025-corrected.md)** - Comprehensive 8-layer technology analysis with validated performance claims and evidence-based benefits
-- **[AI-Native Development Framework](./ai-native-development-framework-2025.md)** - Complete methodology for AI-native development with design system integration
-- **[Reality Assessment](./tech-stack-reality-assessment-september-2025.md)** - Validation of technology claims against September 2025 production reality
 
 ### Core Framework Guides
 - [`nextjs-complete-guide.md`](./nextjs-complete-guide.md) - Complete Next.js 15.5 guide with AI integration, Turbopack, and TypeScript
@@ -86,6 +85,7 @@ This repository contains detailed analysis and implementation guides for the mod
 - [`tailwind-css-complete-guide.md`](./tailwind-css-complete-guide.md) - **NEW** Tailwind CSS v4.1.13 revolutionary architecture and CSS-first configuration
 - [`shadcn-ui-complete-guide.md`](./shadcn-ui-complete-guide.md) - **NEW** shadcn/ui CLI 3.3.1 code distribution platform and AI-native development
 - [`nodejs-complete-guide.md`](./nodejs-complete-guide.md) - **NEW** Node.js 24.8.0 native TypeScript support and revolutionary performance
+- [`claude-code-complete-guide.md`](./claude-code-complete-guide.md) - **NEW** Claude Code terminal-first AI assistant with autonomous capabilities
 - [`vercel-complete-guide.md`](./vercel-complete-guide.md) - **NEW** Vercel AI Cloud platform with Fluid Compute and enterprise features
 - [`vercel-ai-sdk-complete-guide.md`](./vercel-ai-sdk-complete-guide.md) - **NEW** Vercel AI SDK 5.0.48 with agentic capabilities and multimodal support
 - [`supabase-complete-guide.md`](./supabase-complete-guide.md) - **NEW** Supabase AI-first backend with vector databases and enterprise features
