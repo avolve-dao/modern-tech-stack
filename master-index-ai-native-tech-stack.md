@@ -133,6 +133,12 @@ This collection represents the most comprehensive analysis of AI-native developm
 - [🗄️ Supabase API Reference](./quick-reference/api-cheatsheets/supabase-api-reference.md) - Database, auth, real-time, storage
 - [📝 TypeScript Patterns](./quick-reference/api-cheatsheets/typescript-patterns-reference.md) - Advanced types and patterns
 
+**[Source Monitoring Guide](./quick-reference/source-monitoring-guide.md)** - Comprehensive guide to tracking technology updates:
+- Official sources monitoring (GitHub, blogs, documentation)
+- Social media tracking (X.com, YouTube, TikTok, Reddit, Substack)
+- Automated monitoring tools and workflows
+- Content analysis and quality filtering strategies
+
 ---
 
 ## 📊 **Quick Reference Tables**

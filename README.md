@@ -62,6 +62,7 @@ This repository contains detailed analysis and implementation guides for the mod
 - **[🔍 Technology Matrix](./quick-reference/TECH_MATRIX.md)** - Instant decision tables and performance comparisons
 - **[🛤️ Learning Paths](./quick-start/LEARNING_PATHS.md)** - Optimized journeys for different goals and skill levels
 - **[📚 API Cheatsheets](./quick-reference/api-cheatsheets/README.md)** - Complete API references for Next.js, AI SDK, Supabase, TypeScript
+- **[📡 Source Monitoring Guide](./quick-reference/source-monitoring-guide.md)** - Track official sources and community content across all platforms
 - **[📊 Performance Benchmarks](./quick-reference/TECH_MATRIX.md#performance-benchmarks-verified-september-2025)** - Verified metrics and comparisons
 
 ## 📖 Documentation Structure
