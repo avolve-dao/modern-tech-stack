@@ -1,5 +1,9 @@
 # Tailwind CSS Complete Guide - September 2025
 
+**Last Updated**: 2025-09-21
+**Version**: 2025.09
+**Tailwind CSS Version**: v4.1.13
+
 > The definitive documentation for Tailwind CSS v4.1.13's revolutionary architecture and performance transformation
 
 ## Overview

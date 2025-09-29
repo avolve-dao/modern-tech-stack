@@ -311,6 +311,7 @@ const aiWorkflow = createAIWorkflow({
 
 ---
 
-*Last Updated: September 19, 2025*  
+**Last Updated**: 2025-09-19
+**Version**: 2025.09  
 *Validation Status: Current (All Claims Verified)*  
 *Next Review: December 2025*

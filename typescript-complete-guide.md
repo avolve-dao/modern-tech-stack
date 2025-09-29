@@ -1,5 +1,9 @@
 # TypeScript Complete Guide - September 2025
 
+**Last Updated**: 2025-09-21
+**Version**: 2025.09
+**TypeScript Version**: 5.9.2
+
 > The definitive documentation for TypeScript 5.9.2's native performance revolution and mature ecosystem
 
 ## Overview

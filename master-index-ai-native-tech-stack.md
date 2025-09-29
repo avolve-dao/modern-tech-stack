@@ -81,6 +81,14 @@ This collection represents the most comprehensive analysis of AI-native developm
 - **Audience**: Technical leaders, architects, senior developers
 - **Updated**: September 21, 2025 with accuracy corrections
 
+### **🧠 AI Strategy & Frameworks**
+
+**[AI Assistant Decision Framework](./decision-frameworks/ai-assistant-decision-framework.md)**
+- **Purpose**: Guide for selecting the right AI assistant (Claude, Gemini, Codex) for a given task.
+- **Key Content**: Simple decision framework, daily workflows, task-specific recommendations.
+- **Audience**: All Developers, Technical Leaders.
+- **Updated**: September 28, 2025.
+
 ### **🛠️ Implementation Guidance**
 
 **Implementation Guidance Available In**:
@@ -113,8 +121,10 @@ This collection represents the most comprehensive analysis of AI-native developm
 - [shadcn/ui Complete Guide](./shadcn-ui-complete-guide.md) - Component ecosystem
 
 **AI Development Tools**:
-- [Claude Code Complete Guide](./claude-code-complete-guide.md) - Terminal-first AI coding assistant
-- [Vercel AI SDK Complete Guide](./vercel-ai-sdk-complete-guide.md) - AI development toolkit
+- [Claude Code Complete Guide](./claude-code-complete-guide.md) - **Powered by Claude Sonnet 4.5** (Sept 29, 2025) - "Best coding model in the world" with 77.2% SWE-bench Verified (highest), 61.4% OSWorld, 30+ hour sustained focus on complex tasks
+- **Gemini CLI Guide (Coming Soon)** - Our primary AI assistant for daily development and analysis.
+- **Codex Guide (Coming Soon)** - AI assistant for speed and experimentation.
+- [Vercel AI SDK Complete Guide](./vercel-ai-sdk-complete-guide.md) - AI development toolkit with Claude Sonnet 4.5 integration
 
 **Platform & Deployment**:
 - [Vercel Complete Guide](./vercel-complete-guide.md) - Deployment platform
@@ -244,6 +254,7 @@ This collection represents the most comprehensive analysis of AI-native developm
 
 ---
 
-*Last Updated: September 21, 2025*  
-*Next Review: December 2025*  
-*Documentation Quality: A+ (Verified)*
+**Last Updated**: 2025-09-29
+**Version**: 2025.09
+**Next Review**: 2025-12-21
+**Documentation Quality**: A+ (Verified)

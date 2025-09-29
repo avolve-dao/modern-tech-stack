@@ -1,5 +1,8 @@
 # Vercel Complete Guide - September 2025
 
+**Last Updated**: 2025-09-21
+**Version**: 2025.09
+
 > The definitive documentation for Vercel's AI Cloud platform transformation and revolutionary infrastructure innovations
 
 ## Overview

@@ -1,5 +1,9 @@
 # React 19.1 Complete Guide - September 2025
 
+**Last Updated**: 2025-09-21
+**Version**: 2025.09
+**React Version**: 19.1.1
+
 > The definitive documentation for React 19.1's server-first revolution, React Compiler, and modern ecosystem transformation
 
 ## Overview

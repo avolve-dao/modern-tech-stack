@@ -1,5 +1,9 @@
 # Vercel AI SDK Complete Guide - September 2025
 
+**Last Updated**: 2025-09-29
+**Version**: 2025.09
+**AI SDK Version**: 5.0.48
+
 > The definitive documentation for Vercel AI SDK 5.0.48 with comprehensive AI model integrations, agentic capabilities, and enterprise-grade features
 
 ## Overview
@@ -39,8 +43,16 @@ The SDK now supports an **explosive array of cutting-edge models** beyond the in
 - **o3-mini model** with full reasoning capabilities
 - **GPT-4.5** with enhanced multimodal support
 
-**Reasoning Model Revolution:**
-- **Anthropic Claude 3.7 Sonnet** with thinking models
+**Anthropic Breakthrough - Claude Sonnet 4.5:**
+- **Released September 29, 2025** - "Best coding model in the world"
+- **77.2% SWE-bench Verified** (200K context) - highest among all AI tools
+- **61.4% OSWorld benchmark** - dramatic improvement from 42.2%
+- **30+ hour sustained focus** on complex, multi-step tasks
+- **Same pricing as Sonnet 4**: $3/$15 per million tokens
+- **Most aligned frontier model** - reduced sycophancy, deception, power-seeking
+- **Enhanced security** - improved prompt injection defenses
+
+**Other Reasoning Models:**
 - **DeepSeek R1** with reasoning token access
 - **Amazon Bedrock reasoning models** featuring budget token support
 - **Cross-provider reasoning middleware** for consistent experience
@@ -187,7 +199,8 @@ function AIComponent() {
 
 **Unified message architecture** handles multiple content types:
 - **Text, images, audio, video, files** through consistent parts-based structure
-- **GPT-4.1, Claude Sonnet 4, Gemini 2.0** lead multimodal support
+- **GPT-4.1, Claude Sonnet 4.5, Gemini 2.0** lead multimodal support
+- **Claude Sonnet 4.5** excels at code-related multimodal tasks with 77.2% SWE-bench performance
 - **Native PDF processing** without preprocessing requirements
 - **Contextual image generation** through Gemini 2.0 Flash
 

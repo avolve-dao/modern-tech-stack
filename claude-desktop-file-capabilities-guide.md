@@ -162,5 +162,6 @@ While the beta status and security requirements add some friction to the user ex
 - [Implementation Frameworks](./implementation/)
 
 ---
-*Last Updated: September 24, 2025*
+**Last Updated**: 2025-09-24
+**Version**: 2025.09
 *Part of: Modern Tech Stack Documentation*

@@ -1,5 +1,8 @@
 # Supabase Complete Guide - September 2025
 
+**Last Updated**: 2025-09-21
+**Version**: 2025.09
+
 > The definitive documentation for Supabase's AI-first backend platform with vector databases, real-time capabilities, and enterprise-grade features
 
 ## Overview

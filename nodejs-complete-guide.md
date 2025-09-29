@@ -1,5 +1,9 @@
 # Node.js Complete Guide - September 2025
 
+**Last Updated**: 2025-09-21
+**Version**: 2025.09
+**Node.js Version**: 24.8.0
+
 > The definitive documentation for Node.js 24.8.0 with native TypeScript support and revolutionary performance improvements
 
 ## Overview

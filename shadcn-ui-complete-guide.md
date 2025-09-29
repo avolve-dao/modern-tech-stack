@@ -1,5 +1,9 @@
 # shadcn/ui Complete Guide - September 2025
 
+**Last Updated**: 2025-09-21
+**Version**: 2025.09
+**shadcn/ui CLI Version**: 3.3.1
+
 > The definitive documentation for shadcn/ui CLI 3.3.1 and the revolutionary code distribution platform transforming modern UI development
 
 ## Overview
