@@ -1,35 +1,489 @@
-# React 19.1 Complete Guide - September 2025
+# React 19.2 Complete Guide - October 2025
 
-**Last Updated**: 2025-09-21
-**Version**: 2025.09
-**React Version**: 19.1.1
+**Last Updated**: 2025-10-01
+**Version**: 2025.10
+**React Version**: 19.2.0
 
-> The definitive documentation for React 19.1's server-first revolution, React Compiler, and modern ecosystem transformation
+> The definitive documentation for React 19.2's server-first revolution, Activity components, Effect Events, and modern ecosystem transformation
 
 ## Overview
 
-React has undergone a fundamental transformation in 2025, with React 19.1.1 (released July 28, 2025) marking the framework's most significant architectural shift since its inception. **The stable release of React Server Components, coupled with the React Compiler reaching Release Candidate status, positions React as a comprehensive full-stack framework** that automatically optimizes performance while dramatically reducing client-side JavaScript.
+React 19.2.0 (released October 1, 2025) continues React's fundamental transformation with production-ready features for performance tracking, partial pre-rendering, and declarative UI priority management. **The introduction of `<Activity>`, `useEffectEvent`, and Partial Pre-rendering capabilities further solidifies React's position as a comprehensive full-stack framework** that automatically optimizes performance while dramatically reducing complexity.
 
-These changes represent not just incremental improvements, but a complete reimagining of how React applications are built, with server-first architectures becoming the default and automatic memoization eliminating entire categories of performance optimization work.
+These changes build upon React 19's server-first architecture with new primitives for controlling render priority, managing effect dependencies more elegantly, and streaming partial content from the server.
 
 ## Current Version Status
 
-### React 19.1.1 - Latest Stable Release
-
-**React 19.1.1 remains the latest stable version** as of September 21, 2025, with no announcements for React 19.2 or React 20. The React team's focus has shifted to experimental features and compiler improvements rather than numbered releases.
+### React 19.2.0 - Latest Stable Release
 
 **Key Statistics:**
-- **50-75% reductions** in client-side JavaScript bundles
+- **50-75% reductions** in client-side JavaScript bundles (maintained from 19.1)
 - **42.8% of top 10,000 websites** globally now use React
 - **20+ million weekly NPM downloads** for the core package
 - **75% developer retention** rate in the ecosystem
 
-### Experimental Features (react@experimental)
+## New Features in React 19.2
 
-Two significant experimental features represent the primary innovation beyond 19.1.1:
+### Activity Component - Declarative UI Priority Management
 
-1. **View Transitions** (`<ViewTransition>`) - Declarative animations using browser's startViewTransition API
-2. **Activity** (`<Activity>`) - Hide UI while preserving state with reduced performance costs
+The `<Activity>` component introduces a declarative way to control which parts of your app render and when, solving common patterns like pre-loading navigation targets and maintaining state during back navigation.
+
+**Core Concept**: Break your app into "activities" that can be controlled and prioritized without conditional rendering hacks.
+
+**Modes:**
+- `visible`: Shows children, mounts effects, processes updates normally
+- `hidden`: Hides children, unmounts effects, defers all updates until React has idle time
+
+**Use Cases:**
+- Pre-render navigation targets users are likely to visit next
+- Maintain form state when users navigate away
+- Background-load data, CSS, and images without blocking visible UI
+- Faster navigations with preserved scroll positions and input values
+
+```typescript
+// Before: Conditional rendering loses state
+function App() {
+  const [currentPage, setCurrentPage] = useState('home')
+
+  return (
+    <>
+      {currentPage === 'home' && <HomePage />}
+      {currentPage === 'profile' && <ProfilePage />}
+    </>
+  )
+  // Problem: ProfilePage loses all state when navigating away
+}
+
+// After: Activity preserves state and pre-renders
+function App() {
+  const [currentPage, setCurrentPage] = useState('home')
+
+  return (
+    <>
+      <Activity mode={currentPage === 'home' ? 'visible' : 'hidden'}>
+        <HomePage />
+      </Activity>
+      <Activity mode={currentPage === 'profile' ? 'visible' : 'hidden'}>
+        <ProfilePage />
+      </Activity>
+    </>
+  )
+  // Benefits:
+  // - ProfilePage maintains state when hidden
+  // - Can pre-render ProfilePage in background
+  // - Back navigation is instant with preserved state
+}
+```
+
+**Performance Characteristics:**
+- Hidden activities defer updates until React has no other work
+- Effects are unmounted in hidden mode (saves resources)
+- Pre-rendering doesn't impact visible UI performance
+- Future modes planned for additional use cases
+
+**Dependencies Before Using:**
+- ✅ Understand React concurrent rendering
+- ✅ Know when to optimize vs. premature optimization
+- ✅ Profile actual navigation patterns before implementing
+
+### useEffectEvent - Stable Effect Dependencies
+
+`useEffectEvent` solves the long-standing problem of effect dependencies that should "see" latest values without causing the effect to re-run.
+
+**The Problem It Solves:**
+```typescript
+// Problem: theme change causes chat to reconnect
+function ChatRoom({ roomId, theme }) {
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.on('connected', () => {
+      showNotification('Connected!', theme); // Uses theme
+    });
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId, theme]); // theme causes unnecessary reconnects
+}
+```
+
+**The Solution:**
+```typescript
+function ChatRoom({ roomId, theme }) {
+  const onConnected = useEffectEvent(() => {
+    showNotification('Connected!', theme); // Always sees latest theme
+  });
+
+  useEffect(() => {
+    const connection = createConnection(serverUrl, roomId);
+    connection.on('connected', () => {
+      onConnected(); // Call Effect Event
+    });
+    connection.connect();
+    return () => connection.disconnect();
+  }, [roomId]); // Only roomId is a dependency
+}
+```
+
+**Key Rules:**
+- Effect Events are NOT reactive dependencies
+- Always see the latest props and state (like DOM events)
+- Can only be declared in the same component/Hook as their Effect
+- Must upgrade to `eslint-plugin-react-hooks@6.1.0` for proper linting
+- Similar to DOM events in behavior and mental model
+
+**When to Use:**
+- ✅ Effect has "event handlers" that need latest values
+- ✅ Separating "what triggers" from "what happens"
+- ✅ Avoiding unnecessary effect re-runs for non-synchronization values
+- ❌ Not for replacing all effect dependencies (violates Rules of Hooks)
+
+**Dependencies Before Using:**
+- ✅ Deep understanding of `useEffect` dependency array
+- ✅ Know difference between synchronization and event handling
+- ✅ Updated eslint-plugin-react-hooks to 6.1.0+
+
+### cacheSignal - Cache Lifecycle Awareness
+
+`cacheSignal` provides an AbortSignal that activates when the `cache()` lifetime ends, enabling cleanup and cancellation.
+
+**Use Cases:**
+- Abort in-flight requests when cache invalidates
+- Clean up resources when cached result no longer needed
+- Coordinate with React's rendering lifecycle
+
+```typescript
+import { cache, cacheSignal } from 'react';
+
+const dedupedFetch = cache(fetch);
+
+async function Component() {
+  // Signal automatically aborts when:
+  // - Render completes successfully
+  // - Render is aborted
+  // - Render fails
+  await dedupedFetch(url, { signal: cacheSignal() });
+}
+```
+
+**Cache Lifetime Ends When:**
+- React successfully completes rendering
+- The render was aborted
+- The render has failed
+
+**Dependencies Before Using:**
+- ✅ Understanding of React's `cache()` function
+- ✅ Knowledge of AbortSignal API
+- ✅ Awareness of async rendering patterns
+
+### Performance Tracks - Chrome DevTools Integration
+
+React 19.2 adds custom Chrome DevTools tracks providing deep visibility into React's performance characteristics.
+
+**Scheduler Track ⚛:**
+- Shows work React performs at different priorities
+- "blocking" priority for user interactions
+- "transition" priority for `startTransition` updates
+- Displays event types scheduling updates
+- Shows when updates are blocked waiting for other priorities
+- Reveals when React waits for paint before continuing
+
+**Components Track ⚛:**
+- Shows component tree React is rendering or running effects on
+- Labels: "Mount", "Blocked" (yielding to external work)
+- Time breakdown for rendering and running effects
+- Helps identify performance bottlenecks in component tree
+
+**How to Use:**
+1. Record performance profile in Chrome DevTools
+2. Look for custom "⚛" tracks in timeline
+3. Identify blocking work and optimization opportunities
+4. Correlate React work with browser paint/layout
+
+**Dependencies Before Using:**
+- ✅ Familiarity with Chrome DevTools Performance panel
+- ✅ Understanding of React's concurrent rendering
+- ✅ Knowledge of priority levels (blocking vs transition)
+
+## New React DOM Features
+
+### Partial Pre-rendering - Selective SSR
+
+Partial Pre-rendering enables pre-rendering static parts of your app ahead of time, then resuming rendering later with dynamic content.
+
+**Architecture:**
+1. **Pre-render**: Generate static shell with `prerender()`
+2. **Store**: Save postponed state for later
+3. **Resume**: Complete rendering with `resume()` or `resumeAndPrerender()`
+
+**New APIs:**
+
+**react-dom/server (Web Streams):**
+- `prerender()` - Pre-render to Web Stream with postponed state
+- `resume()` - Resume to SSR stream
+
+**react-dom/server (Node Streams):**
+- `resumeToPipeableStream()` - Resume to Node stream
+
+**react-dom/static (Static Generation):**
+- `resumeAndPrerender()` - Resume to static HTML (Web Streams)
+- `resumeAndPrerenderToNodeStream()` - Resume to static HTML (Node Streams)
+
+```typescript
+// Step 1: Pre-render the shell
+const controller = new AbortController();
+const { prelude, postponed } = await prerender(<App />, {
+  signal: controller.signal,
+});
+
+// Save postponed state for later
+await savePostponedState(postponed);
+
+// Send prelude to client or CDN
+response.send(prelude);
+
+// Step 2: Resume rendering later
+const postponed = await getPostponedState(request);
+const resumeStream = await resume(<App />, postponed);
+
+// Or for static generation:
+const { prelude } = await resumeAndPrerender(<App />, postponed);
+```
+
+**Use Cases:**
+- ✅ Serve static shell from CDN instantly
+- ✅ Fill in personalized content on-demand
+- ✅ Reduce Time to First Byte (TTFB)
+- ✅ Progressive enhancement patterns
+
+**Dependencies Before Using:**
+- ✅ Understanding of SSR vs SSG trade-offs
+- ✅ CDN configuration and deployment knowledge
+- ✅ State management for postponed rendering
+
+### Batching Suspense Boundaries for SSR
+
+React 19.2 fixes behavioral differences between client-rendered and SSR Suspense boundaries by batching reveals during streaming.
+
+**The Problem (Before 19.2):**
+- Server-rendered Suspense immediately replaced fallbacks as content arrived
+- Client-rendered Suspense showed all fallbacks, then revealed content together
+- Inconsistent user experience and animation timing
+
+**The Solution (19.2):**
+- Server boundaries batch reveals for a short time
+- More content reveals together (consistent with client behavior)
+- Better foundation for `<ViewTransition>` support
+- Animations run on larger content batches
+
+**Impact:**
+- Smoother perceived performance
+- Consistent behavior across client/server rendering
+- Better support for future view transition animations
+
+**Dependencies Before Using:**
+- ✅ Understanding of Suspense boundaries
+- ✅ Knowledge of streaming SSR
+- ✅ Awareness of animation timing considerations
+
+### SSR: Web Streams Support for Node.js
+
+React 19.2 brings Web Streams APIs to Node.js environments, unifying the streaming SSR API surface.
+
+**Now Available in Node.js:**
+- `renderToReadableStream()` - Previously browser-only
+- `prerender()` - Partial pre-rendering
+- `resume()` - Resume from postponed state
+- `resumeAndPrerender()` - Resume and generate static HTML
+
+**Benefits:**
+- Consistent API across browser and Node.js
+- Better compatibility with modern JavaScript runtimes
+- Simplified mental model for streaming
+
+**Dependencies Before Using:**
+- ✅ Node.js 18+ (Web Streams support)
+- ✅ Understanding of streaming vs. buffered rendering
+- ✅ Knowledge of Web Streams API
+
+## Ecosystem Updates
+
+### eslint-plugin-react-hooks v6.1.0
+
+**Major Changes:**
+- **Flat config by default** in `recommended` preset
+- Legacy config available via `recommended-legacy`
+- New React Compiler-powered rules (opt-in)
+- Better `useEffectEvent` linting support
+
+**Migration:**
+```javascript
+// If using legacy config, update:
+// Before:
+extends: ['plugin:react-hooks/recommended']
+
+// After:
+extends: ['plugin:react-hooks/recommended-legacy']
+```
+
+**Compiler-Enabled Rules:**
+- Check documentation for full list of additional rules
+- Opt-in by default (not breaking changes)
+
+**Dependencies Before Using:**
+- ✅ Understanding of ESLint flat config format
+- ✅ Awareness of React Compiler implications
+
+### useId Prefix Change
+
+Default `useId` prefix updated from `:r:` (19.0.0) or `«r»` (19.1.0) to `_r_`.
+
+**Reason:**
+- Support for View Transitions API
+- Valid for `view-transition-name` CSS property
+- Valid for XML 1.0 names
+- Reduced collision risk with user-defined IDs
+
+**Impact:**
+- Minimal breaking changes (internal identifiers)
+- Better CSS selector compatibility
+
+## Notable Changes and Bug Fixes
+
+### Performance Improvements
+- Improved component stacks in error messages
+- Avoid stack overflow on wide trees during Hot Reload
+- Better handling of deeply nested Suspense boundaries
+
+### API Refinements
+- Context stringified as "SomeContext" instead of "SomeContext.Provider"
+- Fixed infinite `useDeferredValue` loop in popstate events
+- Fixed bugs with initial values in `useDeferredValue`
+- Fixed crash when submitting forms with Client Actions
+
+### DOM and Accessibility
+- Allow nonce on hoistable styles
+- Stop warning for ARIA 1.3 attributes
+- Warn for React-owned nodes used as Containers with text content
+
+### SSR Stability
+- Hide/unhide dehydrated Suspense boundaries if they resuspend
+- Avoid hanging when suspending after aborting during render
+- Better handling of aborted renders
+
+## Best Practices and Recommendations
+
+### When to Use New Features
+
+**Activity Component:**
+- ✅ Multi-page SPAs with complex navigation
+- ✅ Forms that should preserve state during navigation
+- ✅ Pre-loading likely next destinations
+- ❌ Simple apps with minimal navigation
+- ❌ When you don't have performance evidence of need
+
+**useEffectEvent:**
+- ✅ Effect has event handlers using latest props
+- ✅ Separating synchronization from event handling
+- ✅ Avoiding unnecessary effect re-runs
+- ❌ Replacing all effect dependencies without thought
+- ❌ When standard dependencies work fine
+
+**Partial Pre-rendering:**
+- ✅ High-traffic pages with static shells
+- ✅ Apps with personalized content sections
+- ✅ CDN-optimized architecture already in place
+- ❌ Fully dynamic pages
+- ❌ Simple apps without CDN infrastructure
+
+**Performance Tracks:**
+- ✅ Diagnosing performance bottlenecks
+- ✅ Understanding concurrent rendering behavior
+- ✅ Optimizing transition priorities
+- ❌ Day-to-day development (use when profiling)
+
+### Modern React Architecture
+
+**Server-First Approach:**
+1. Start with Server Components for data fetching
+2. Use Client Components only for interactivity
+3. Leverage Activity for navigation state preservation
+4. Implement progressive enhancement with Actions API
+
+**Performance Optimization Workflow:**
+1. Profile with Performance Tracks to identify bottlenecks
+2. Use Activity to defer non-critical UI updates
+3. Apply useEffectEvent to eliminate unnecessary effect runs
+4. Enable React Compiler for automatic optimization
+
+**State Management Strategy:**
+1. Use server state as source of truth
+2. Minimize client state to UI concerns only
+3. Leverage built-in hooks (useOptimistic, useActionState, useEffectEvent)
+4. Choose Zustand for simple client state, Redux for complex applications
+
+### Dependencies and Learning Path
+
+**Prerequisites for React 19.2:**
+1. ✅ Solid understanding of React 19 fundamentals
+2. ✅ Server Components and Actions API knowledge
+3. ✅ Concurrent rendering and Suspense concepts
+4. ✅ Chrome DevTools profiling basics
+
+**Learning Sequence (Logical Dependencies):**
+1. Master React 19.1 core features first
+2. Then: Activity component for navigation optimization
+3. Then: useEffectEvent for complex effects
+4. Then: Performance Tracks for profiling
+5. Advanced: Partial Pre-rendering for CDN optimization
+
+**When You're Ready:**
+- ✅ Can explain difference between visible/hidden Activity modes
+- ✅ Can identify when useEffectEvent is appropriate
+- ✅ Can read Performance Tracks to find bottlenecks
+- ✅ Understand postponed rendering lifecycle
+
+## Migration Guide
+
+### From React 19.1 to 19.2
+
+**Breaking Changes:**
+- `useId` prefix changed (internal, rarely affects apps)
+- Must upgrade eslint-plugin-react-hooks to 6.1.0 for useEffectEvent
+
+**Non-Breaking Additions:**
+- All new features are additive
+- Existing code continues working without changes
+- Opt-in to new features when ready
+
+**Recommended Migration Path:**
+1. Upgrade React to 19.2.0
+2. Upgrade eslint-plugin-react-hooks to 6.1.0+
+3. Test existing functionality (should work unchanged)
+4. Profile with Performance Tracks to find opportunities
+5. Gradually adopt Activity, useEffectEvent where beneficial
+6. Consider Partial Pre-rendering for high-traffic pages
+
+## Future Roadmap and React Conf 2025
+
+### Expected Announcements
+
+**Event Details:**
+- **Date**: October 7-8, 2025
+- **Location**: Henderson, Nevada
+- **Livestream**: Free for global audience
+
+**Likely Topics:**
+- React Compiler General Availability
+- Additional Activity modes
+- View Transitions stabilization
+- React 20 roadmap
+
+### Long-term Vision
+
+**Anticipated Developments:**
+- More Activity modes for different use cases
+- Enhanced partial pre-rendering capabilities
+- Tighter integration with performance profiling
+- Continued server-first evolution
 
 ## Revolutionary Features in React 19
 
