@@ -161,9 +161,85 @@ npx shadcn init
 
 ## Component Ecosystem Evolution
 
-### Core Component Library (September 2025)
+### Core Component Library (October 2025)
 
-**New Components (2025 Releases):**
+**October 2025 - Seven New Essential Components:**
+
+shadcn released seven powerful new components that work with **every component library** (Radix, Base UI, React Aria). These components solve everyday UI patterns that developers rebuild constantly:
+
+1. **Spinner** - Loading state indicator
+   - Customizable size, color, and animation
+   - Works in buttons, overlays, and inline contexts
+   - Replace with your own spinner design easily
+
+2. **Kbd** - Keyboard key display
+   - Render keyboard shortcuts and key combinations
+   - `KbdGroup` for key combinations (e.g., Ctrl+B)
+   - Perfect for tooltips, buttons, and documentation
+
+3. **Button Group** - Related button containers
+   - Consistent styling for action groups
+   - Split button support with `ButtonGroupSeparator`
+   - Nested groups for complex layouts
+   - Prefix/suffix text support for inputs
+
+4. **Input Group** - Enhanced input fields
+   - Icons, buttons, labels around inputs
+   - Works with textareas for complex forms
+   - Perfect for search bars, prompt forms, and toolbars
+   - Built-in spinner support for loading states
+
+5. **Field** - Universal form component
+   - Works with **all form libraries** (Server Actions, React Hook Form, TanStack Form)
+   - Supports all form controls (inputs, selects, checkboxes, radios, switches)
+   - `FieldSet` and `FieldGroup` for multi-section forms
+   - Responsive orientation with `orientation="responsive"`
+   - Selectable field groups with `FieldLabel` wrapper
+   - Beautiful abstraction for complex forms
+
+6. **Item** - Flexible content container
+   - Display lists of items, cards, and more
+   - `ItemMedia` for icons, avatars, or images
+   - `ItemContent` for titles and descriptions
+   - `ItemGroup` for lists
+   - Works as links with `asChild` prop
+
+7. **Empty** - Empty state displays
+   - Consistent empty state patterns
+   - Icon, avatar, or image support
+   - Call-to-action buttons
+   - Input groups for search/email subscriptions
+
+**Usage Example - Field Component:**
+```tsx
+import { Field, FieldLabel, FieldDescription, FieldError } from "@/components/ui/field"
+
+<Field>
+  <FieldLabel htmlFor="username">Username</FieldLabel>
+  <Input id="username" placeholder="Max Leiter" />
+  <FieldDescription>
+    Choose a unique username for your account.
+  </FieldDescription>
+  <FieldError />
+</Field>
+```
+
+**Usage Example - Button Group:**
+```tsx
+import { ButtonGroup, ButtonGroupSeparator } from "@/components/ui/button-group"
+
+<ButtonGroup>
+  <Button>Save</Button>
+  <ButtonGroupSeparator />
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button size="icon"><ChevronDown /></Button>
+    </DropdownMenuTrigger>
+  </DropdownMenu>
+</ButtonGroup>
+```
+
+**Previous 2025 Releases:**
 - **Sidebar** (October 2024): 25+ sub-components for complex navigation
 - **Calendar v2** (June 2025): 30+ calendar blocks with React DayPicker
   - Persian, Hijri, and Jalali calendar support
@@ -176,7 +252,7 @@ npx shadcn init
 - **Toast** → **Sonner** (better animations, smaller bundle)
 - **Button** cursor changed to default (Tailwind v4 alignment)
 - **Default style** deprecated → **new-york** style
-- **50+ core components** with hundreds of blocks available
+- **57+ core components** with hundreds of blocks available
 
 ### Blocks Library Expansion
 
