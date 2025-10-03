@@ -5,6 +5,16 @@ All notable changes to the Modern Tech Stack documentation will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to semantic versioning with date-based versions (YYYY.MM).
 
+## [2025.10] - 2025-10-03
+
+### Updated
+- **shadcn/ui Complete Guide** - Added comprehensive Official Changelog History section
+  - Documented all major releases from June 2023 to September 2025
+  - Added detailed feature breakdowns for CLI 3.0, MCP server integration, and registry system
+  - Included migration guides and code examples for each major release
+  - Documented evolution from component library to universal code distribution platform
+  - Updated guide version to 2025.10 with October 2025 timestamp
+
 ## [2025.09] - 2025-09-30
 
 ### Major Reorganization

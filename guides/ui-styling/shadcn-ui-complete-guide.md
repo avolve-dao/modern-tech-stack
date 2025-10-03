@@ -1,7 +1,7 @@
-# shadcn/ui Complete Guide - September 2025
+# shadcn/ui Complete Guide - October 2025
 
-**Last Updated**: 2025-09-21
-**Version**: 2025.09
+**Last Updated**: 2025-10-03
+**Version**: 2025.10
 **shadcn/ui CLI Version**: 3.3.1
 
 > The definitive documentation for shadcn/ui CLI 3.3.1 and the revolutionary code distribution platform transforming modern UI development
@@ -552,6 +552,251 @@ npx shadcn migrate animations
 - **Revenue sharing** for popular community components
 - **Enterprise licensing** with support and SLA guarantees
 - **AI component generation** from natural language descriptions
+
+## Official Changelog History
+
+shadcn/ui maintains a detailed changelog at [ui.shadcn.com/docs/changelog](https://ui.shadcn.com/docs/changelog). Below are the key releases and their impact on the platform evolution:
+
+### September 2025 - Registry Index
+
+Introduction of an index of open source registries for component discovery and installation:
+
+- **Registry Index**: Centralized discovery at [ui.shadcn.com/r/registries.json](https://ui.shadcn.com/r/registries.json)
+- **Zero-config installation**: Install from any registry without prior configuration
+- **Automatic configuration**: Registries auto-added to `components.json`
+
+```bash
+npx shadcn add @ai-elements/prompt-input
+```
+
+### August 2025 - shadcn CLI 3.0 and MCP Server
+
+Major rewrite with namespaced registries, advanced authentication, and MCP server integration:
+
+**Namespaced Registries:**
+- Install using `@registry/name` format from any organization
+- Decentralized system with no central registrar
+- Cross-registry dependencies with automatic resolution
+- Component override capabilities for customization
+
+```json
+{
+  "registries": {
+    "@acme": "https://acme.com/r/{name}.json",
+    "@internal": {
+      "url": "https://registry.company.com/{name}",
+      "headers": {
+        "Authorization": "Bearer ${REGISTRY_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+**Private Registries:**
+- Advanced authentication: tokens, API keys, custom headers
+- Enterprise-ready secure component distribution
+- Environment variable support for credentials
+- Works with corporate proxies and VPNs
+
+**Search & Discovery Commands:**
+- `npx shadcn view @acme/auth-system` - Preview code before installing
+- `npx shadcn search @tweakcn -q "dark"` - Search across registries
+- `npx shadcn list @acme` - List all items from a registry
+
+**MCP Server Production Release:**
+- Zero-config: `npx shadcn@latest mcp init`
+- Works with all registries automatically
+- Claude Code, Cursor, VS Code integration
+- One command adds to MCP clients
+
+**Performance Improvements:**
+- Up to 3x faster dependency resolution
+- Smarter file deduplication and merging
+- Better monorepo support out of the box
+- Updated `build` command for registry authors
+
+**Error Handling:**
+- Custom error messages from registry developers
+- Actionable guidance for users and LLMs
+- Clear environment variable requirements
+- Helpful troubleshooting context
+
+### July 2025 - Universal Registry Items & Local Files
+
+**Universal Registry Items:**
+- Framework-agnostic code distribution (no React/Tailwind required)
+- Config files, linting rules, docs, any code type
+- Enables new distribution workflows
+- Language and framework independent
+
+**Local File Support:**
+```bash
+# Initialize from local file
+npx shadcn init ./template.json
+
+# Add component from local file
+npx shadcn add ./block.json
+```
+
+**Benefits:**
+- Zero setup, no remote registries required
+- Test registry items locally before publishing
+- Enhanced workflow for agents and MCP
+- Keep proprietary components private
+- Faster development iteration
+
+### June 2025 - Radix UI Migration & Calendar Update
+
+**Radix UI Package Migration:**
+```bash
+npx shadcn@latest migrate radix
+```
+
+Automatically migrates from `@radix-ui/react-*` to unified `radix-ui` package:
+
+```diff
+- import * as AlertDialogPrimitive from "@radix-ui/react-dialog"
++ import { AlertDialog as AlertDialogPrimitive } from "radix-ui"
+```
+
+**Calendar Component Upgrade:**
+- Upgraded to latest React DayPicker version
+- Collection of 30+ calendar blocks
+- Major feature improvements
+- Enhanced accessibility and customization
+
+### May 2025 - Site Upgrade
+
+- Upgraded [ui.shadcn.com](https://ui.shadcn.com) to Next.js 15.3 and Tailwind v4
+- Upgraded `new-york` components to latest standards
+- Performance and navigation improvements
+- Foundation for new feature development
+
+### April 2025 - MCP Preview
+
+Early MCP integration proof-of-concept:
+- `npx shadcn registry:mcp` for zero-config MCP support
+- Foundation for August 2025 production release
+- Community feedback and iteration
+
+### March 2025 - Cross-Framework Routes & Tailwind v4 Preview
+
+**shadcn 2.5.0 "Resolve Anywhere":**
+- Files can be placed anywhere in app structure
+- Multi-pass import resolution for complex projects
+- No fixed file structure requirements
+- Framework-agnostic file organization
+
+**Cross-Framework Route Support:**
+- Auto-detect framework and adapt routes
+- Works with Laravel, Vite, React Router
+- Simplified multi-framework development
+
+**Tailwind v4 Preview:**
+- First Tailwind v4 and React 19 preview
+- New `@theme` directive and inline support
+- All components updated for Tailwind v4
+- Removed forwardRefs, adjusted types for React 19
+- Added `data-slot` attributes for component styling
+- HSL colors converted to OKLCH
+- Deprecated toast component (use sonner instead)
+- Deprecated default style (new projects use new-york)
+
+### February 2025 - Updated Registry Schema
+
+Enhanced registry schema for advanced distribution:
+- Custom styles with own design systems and tokens
+- Extend and override third-party components
+- Mix and match components from multiple sources
+- Distribute themes, CSS variables, hooks, animations
+- Tailwind layers and utility distributions
+
+### January 2025 - Blocks Library
+
+Community contribution system:
+- Applications, marketing, products, and more block types
+- Request feature for community-driven development
+- Upvoting system on GitHub for prioritization
+- Open source contribution model
+- Shared component patterns
+
+### December 2024 - New Components & CLI Improvements
+
+**New Components:**
+- **Carousel**: Motion, swipe gestures, keyboard support (built on Embla Carousel)
+- **Drawer**: Mobile-optimized drawer component (Vaul by emilkowalski_)
+- **Pagination**: Page navigation with previous/next buttons
+- **Resizable**: Resizable panel groups and layouts (react-resizable-panels by bvaughn)
+- **Sonner**: Modern toast component (by emilkowalski_)
+
+**CLI Updates:**
+- Custom Tailwind prefix support with automatic prefixing
+- Automatic utility class prefixing when adding components
+- `tailwind.config.ts` TypeScript detection
+- Drop-in integration for existing projects (Docusaurus, Nextra)
+- Works with `cn`, `cva`, and CSS variables
+
+### July 2023 - JavaScript Support
+
+- TypeScript-first with JavaScript fallback option
+- `tsx` flag in `components.json` for JavaScript projects
+- jsconfig.json support for import aliases
+- Optional TypeScript adoption path
+
+### June 2023 - Major CLI Rewrite
+
+**Complete CLI Rewrite:**
+- New `init` command with interactive project configuration
+- Enhanced `add` command with automatic dependency resolution
+- Experimental `diff` command for tracking upstream updates
+- `components.json` for centralized project configuration
+- Framework detection and adaptation
+
+**Theming Options:**
+- Choose CSS variables or Tailwind utility classes
+- Configurable via `tailwind.cssVariables` boolean
+- Flexible theming approaches
+
+**Base Color Configuration:**
+- Set base color palette: gray, neutral, slate, stone, zinc
+- Automatic CSS variable or utility class generation based on choice
+
+**React Server Components Support:**
+- Opt-in/out with `rsc` flag in configuration
+- Automatic `use client` directive management
+- Framework compatibility handling
+
+**Styles System Introduction:**
+- `default` style with lucide-react icons and tailwindcss-animate
+- `new-york` style with Radix Icons, smaller buttons, card shadows
+- Foundation for visual customization and theming
+- Style-specific component variations
+
+**Component Updates:**
+- Exit animations added to all components
+- New `icon` button size variant
+- Updated Sheet component with `side` prop (replaced `position`)
+- Removed `size` prop from Sheet (use className for responsive sizing)
+
+### Key Changelog Insights
+
+**Release Velocity:**
+- Major releases every 2-4 months
+- Minor updates and components added continuously
+- Breaking changes clearly documented with migration paths
+
+**Evolution Pattern:**
+- Started as component library (pre-2023)
+- Evolved to CLI-based installation (June 2023)
+- Expanded to registry system (2024-2025)
+- Transformed to universal code distribution platform (August 2025)
+
+**Community Focus:**
+- Open source contribution model
+- Public roadmap with community input
+- Rapid response to ecosystem changes (React 19, Tailwind v4)
+- Enterprise feedback incorporated into features
 
 ## Enterprise and Production Considerations
 
